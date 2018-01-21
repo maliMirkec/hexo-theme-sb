@@ -1,0 +1,45 @@
+//- <article class="article__item article__item--post">
+//-   <header class="article__header article__header--post">
+//-     <% if(item.thumbnail) { %>
+//-       <% var img_big = item.thumbnail.replace('upload/', 'upload/f_auto,q_auto,w_640/'); %>
+//-       <% var img_small = item.thumbnail.replace('upload/', 'upload/f_auto,q_auto,w_320/'); %>
+//-       <div class="article__thumbnail">
+//-         <img src="<%= img_big %>" class="article__thumbnail-image" alt="<%= item.title %>" srcset="<%= img_small %> 320w, <%= img_big %> 640w" sizes="(max-width: 340px) 320px, 640px">
+//-       </div>
+//-     <% } %>
+//-     <h2 class="article__title article__title--post">
+//-       <%- item.title %>
+//-     </h2>
+//-     <% if(item.layout == 'post') { %>
+//-       <div class="article__details">
+//-         <div class="article__meta">
+//-           <span class="article__meta-item">
+//-             <span class="article__meta-inner">On: <%= item.date.format(config.date_format) %></span>
+//-           </span>
+//-           <% if(item.author) { %>
+//-             <span class="article__meta-item">
+//-               <span class="article__meta-inner">By: <%- item.author %></span>
+//-             </span>
+//-           <% } %>
+//-         </div>
+//-         <%- partial('breadcrumbs') %>
+//-       </div>
+//-     <% } %>
+//-   </header>
+
+//-   <div class="article__content article__content--post">
+//-     <%- item.content %>
+//-   </div>
+
+//-   <% if(item.layout == 'post') { %>
+//-     <footer class="article__footer article__footer--post">
+//-       <%- partial('tags', {item: item}) %>
+//-       <%- partial('social', {item: item}) %>
+//-     </footer>
+//-   <% } %>
+
+//- </article>
+
+//- <% if(item.layout == 'post') { %>
+//-   <%- partial('contact') %>
+//- <% } %>

@@ -1,0 +1,17 @@
+//- <% if (theme.widgets.contact){ %>
+//-   <ul class="widget-contact">
+//-     <% for (var i in theme.widgets.contact){ %>
+//-       <li class="widget-contact__item">
+//-         <% if(i == 'mail') { %>
+//-           <a class="widget-contact__link widget-contact__link--<%- i %>" href="mailto:<%= theme.widgets.contact[i] %>" title="<%- titlecase(i) %>">
+//-             <%- inline_svg('/gfx/' + i + '.svg') %> <span class="widget-contact__text"><%- titlecase(i) %></span>
+//-           </a>
+//-         <% } else { %>
+//-           <a class="widget-contact__link widget-contact__link--<%- i %>" href="<%= theme.widgets.contact[i] %>" title="<%- titlecase(i) %>">
+//-             <%- inline_svg('/gfx/' + i + '.svg') %> <span class="widget-contact__text"><%- titlecase(i) %></span>
+//-           </a>
+//-         <% } %>
+//-       </li>
+//-     <% } %>
+//-   </ul>
+//- <% } %>

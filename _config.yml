@@ -1,0 +1,44 @@
+site:
+  full_name: SB - Silvestar's personal website
+  short_name: SB
+  description: Silvestar is a fearless web developer eager to prove his worth
+  author: Silvestar Bistrović
+  logo: /gfx/sb.svg
+
+open_graph:
+  pretty_url: true
+  image: /gfx/SB-big.png
+  fb:
+    fb_id: 340933169673372
+    fb_admins: malimirkeccita
+  twitter:
+    twitter_id: malimirkeccita
+  google_plus:
+    google_plus_id: +SilvestarbistrovicFromHr
+
+disqus_shortname: silvestarbistrovic
+
+webfont_family:
+- Exo 2:300,300i,500,500i
+- Roboto+Mono:400
+
+menu:
+  Home: /
+  Blog: /categories/articles
+  Portfolio: /portfolio
+  About: /about-me
+
+sharing:
+  twitter: malimirkeccita
+  facebook: silvestarbistrovic.from.hr
+
+widgets:
+  contact:
+    mail: mailto:me@silvestarbistrovic.from.hr?Subject=Hello
+    twitter: https://twitter.com/malimirkeccita
+    linkedin: https://www.linkedin.com/in/starbist/
+    facebook: https://www.facebook.com/silvestarbistrovic.from.hr/
+    medium: https://medium.com/@malimirkeccita
+    github: https://github.com/maliMirkec
+    codepen: https://codepen.io/CiTA/
+    lastfm: https://www.last.fm/user/maliMirkec

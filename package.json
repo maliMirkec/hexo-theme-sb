@@ -1,0 +1,12 @@
+{
+  "name": "sb",
+  "version": "1.0.0",
+  "description": "SB Hexo Theme.",
+  "main": "index",
+  "author": "Silvestar Bistrović <malimirkeccita@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "starter-project": "^1.1.32",
+    "yarn": "^0.27.5"
+  }
+}

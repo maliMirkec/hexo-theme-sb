@@ -1,9 +1,3 @@
-//- <% if (item.tags && item.tags.length){ %>
-//-   <div class="tags">
-//-     <% item.tags.each(function(tag) { %>
-//-       <%- link_to(tag.path, tag.name, {
-//-         class: "tags__link"
-//-       }) %>
-//-     <% }) %>
-//-   </div>
-//- <% } %>
+.tags
+  each tag in item.tags
+    a.tags__link(href=tag.path)= tag.name

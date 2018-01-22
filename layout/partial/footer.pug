@@ -1,14 +1,14 @@
-footer
-  h1 Footer
-//- <%- partial('banner', {pos: 'bottom'}) %>
-//- <footer class="footer">
-//-   <%- partial('footer/logo') %>
-//-   <% for(var widget in theme.widgets){ %>
-//-     <%- partial('widget/' + widget) %>
-//-   <% }; %>
-//-   <%- partial('footer/copyright') %>
-//- </footer>
-//- <%- partial('footer/style') %>
-//- <%- partial('footer/disqus') %>
-//- <%- partial('footer/ga') %>
-//- <%- partial('footer/webfont') %>
+footer.footer
+  if (theme && theme.widgets.contact)
+    include widget/contact
+  if (theme && theme.site.short_name)
+    .copyright
+      p "&copy; + #{theme.site.short_name} + #{new Date().getFullYear()}"
+
+if (theme && theme.widgets.google_analytics)
+  include widget/ga
+
+if (item && item.layout == "post" && theme && theme.widgets.disqus)
+  include widget/disqus
+
+include footer/style

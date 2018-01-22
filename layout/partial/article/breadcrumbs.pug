@@ -1,24 +1,11 @@
-//- <ul class="breadcrumb">
-//-   <li class="breadcrumb__item">
-//-     Location:
-//-   </li>
-//-   <li class="breadcrumb__item breadcrumb__item--link">
-//-     <%- link_to('/', 'Home', {
-//-       class: 'breadcrumb__link breadcrumb__link--home'
-//-     }) %>
-//-   </li>
-//-   <% if(page.categories) { %>
-//-     <% page.categories.each(function(cat) { %>
-//-       <li class="breadcrumb__item breadcrumb__item--link">
-//-         <%- link_to(cat.permalink, cat.name, {
-//-           class: 'breadcrumb__link breadcrumb__link-'
-//-         }) %>
-//-       </li>
-//-     <% }); %>
-//-   <% } %>
-//-   <li class="breadcrumb__item breadcrumb__item--link">
-//-     <%- link_to(page.permalink, page.title, {
-//-       class: 'breadcrumb__link breadcrumb__link--current'
-//-     }) %>
-//-   </li>
-//- </ul>
+ul.breadcrumb
+  li.breadcrumb__text Location:
+  li.breadcrumb__item
+    a.breadcrumb__link(href="/") Home
+  if (page && page.categories)
+    each cat in page.categories
+      li.breadcrumb__item
+        a.breadcrumb__link(href=cat.permalink)= cat.name
+  if (page && page.title)
+    li.breadcrumb__item
+      a.breadcrumb__link(href=page.permalink)= page.title

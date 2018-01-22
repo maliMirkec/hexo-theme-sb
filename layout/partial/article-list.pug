@@ -1,20 +1,45 @@
-- var title = '';
-
 if (page && page.category)
-  title = 'Category: ' + page.category;
+  - var title = "Category: #{page.category}";
 else if (page && page.tag)
-  title = 'Tag: ' + page.tag;
+  - var title = "Tag: #{page.tag}";
 else if (page && page.archive)
   if (page.year)
-    title = page.year + (page.month ? '/' + page.month : '');
+    - var title = page.year + (page.month ? '/' + page.month : '');
   else
-    title = "Archives";
+    - var title = "Archives";
 
 if (title)
   h1.archive__title= title
 
-- if(page && page.posts)
+if (page && page.posts)
   .article-list
     each post in page.posts
-      include article/list
-    include article/pagination
+      article.article__item
+        .article__intro
+          if (post && post.thumbnail)
+            - var img_big = post.thumbnail.replace('upload/', 'upload/f_auto,q_auto,w_640/');
+            - var img_small = post.thumbnail.replace('upload/', 'upload/f_auto,q_auto,w_320/');
+            - var img_srcset = "#{img_small} 320w, #{img_big} 640w";
+            a.article__thumb(href=post.path)
+              img(src=img_big, alt=post.title, srcset=img_srcset sizes="(max-width: 340px) 320px, 640px")
+          if (post && post.path && post.title)
+            h2.article__title
+              a.article__link(href=post.path)= post.title
+          if (post && post.date)
+            .article__details
+              - var article_published = "On: #{post.date.format(config.date_format)}";
+              .article__meta= article_published
+              if (post && post.author)
+                - var article_author = "By: #{post.author}";
+                .article__meta= article_author
+
+        if (post && post.excerpt)
+          .article__content= post.excerpt
+
+        if (post && post.path)
+          .article__details
+            a.article__link(href=post.path) Read more
+
+if (page && (page.prev || page.next))
+  include article/pagination
+

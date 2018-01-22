@@ -1,17 +1,13 @@
-//- <% if (theme.widgets.contact){ %>
-//-   <ul class="widget-contact">
-//-     <% for (var i in theme.widgets.contact){ %>
-//-       <li class="widget-contact__item">
-//-         <% if(i == 'mail') { %>
-//-           <a class="widget-contact__link widget-contact__link--<%- i %>" href="mailto:<%= theme.widgets.contact[i] %>" title="<%- titlecase(i) %>">
-//-             <%- inline_svg('/gfx/' + i + '.svg') %> <span class="widget-contact__text"><%- titlecase(i) %></span>
-//-           </a>
-//-         <% } else { %>
-//-           <a class="widget-contact__link widget-contact__link--<%- i %>" href="<%= theme.widgets.contact[i] %>" title="<%- titlecase(i) %>">
-//-             <%- inline_svg('/gfx/' + i + '.svg') %> <span class="widget-contact__text"><%- titlecase(i) %></span>
-//-           </a>
-//-         <% } %>
-//-       </li>
-//-     <% } %>
-//-   </ul>
-//- <% } %>
+if (theme && theme.widgets.contact)
+  .widget-contact
+    each contact_item, contact_link in theme.widgets.contact
+      .widget-contact__item
+        - var contact_class = "widget-contact__link widget-contact__link--#{contact_item}";
+        - var contact_src = "/gfx/svg/#{contact_item}.svg";
+        if (contact_item == 'mail')
+          - var contact_href = "mailto:#{contact_class}";
+        else
+          - var contact_href = contact_class;
+        a(href=contact_href class=contact_class)
+          img.sig__icon(src=contact_src, alt=contact_item, inline)
+          contact_item

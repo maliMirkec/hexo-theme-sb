@@ -1,18 +1,7 @@
-//- <% if(theme.sharing) { %>
-//-   <div class="social">
-//-     <% if(theme.sharing.twitter) { %>
-//-       <% var twitterLink = "https://twitter.com/intent/tweet?url=" + item.permalink + "&text=" + item.title + "&via=" + theme.sharing.twitter; %>
-//-       <%- link_to(twitterLink, "Share on Twitter", {
-//-         external: true,
-//-         class: "social__button social__button--twitter"
-//-       }) %>
-//-     <% } %>
-//-     <% if(theme.sharing.facebook) { %>
-//-       <% var facebookLink = "https://facebook.com/sharer.php?u=" + item.permalink; %>
-//-       <%- link_to(facebookLink, "Share on Facebook", {
-//-         external: true,
-//-         class: "social__button social__button--facebook"
-//-       }) %>
-//-     <% } %>
-//-   </div>
-//- <% } %>
+.social
+  if (theme.widgets.sharing.twitter)
+    - var twitterLink = "https://twitter.com/intent/tweet?url=#{item.permalink}&text=#{item.title}&via=#{theme.sharing.twitter}";
+    a.social__button(href=twitterLink, target="_blank") Share on Twitter
+  if (theme.widgets.sharing.facebook)
+    - var facebookLink = "https://facebook.com/sharer.php?u=#{item.permalink}";
+    a.social__button(href=facebookLink, target="_blank") Share on Facebook

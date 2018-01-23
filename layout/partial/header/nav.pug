@@ -4,7 +4,7 @@ if (theme && theme.menu)
       if (theme && theme.site.logo)
         li.header__item.header__item--logo
           a.header__link.header__link--logo(href="/")
-            img.header__image(src=theme.site.logo, alt="Logo - Styled letters S and B")
-      for nav_item in theme.menu
+            img.header__image(src=theme.site.logo, alt="Logo Image")
+      each knav, vnav in theme.menu
         li.header__item
-          a.header__link(href=url_for(nav_item))
+          a.header__link(href=url_for(knav))= vnav

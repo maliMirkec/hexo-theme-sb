@@ -3,7 +3,7 @@ site:
   short_name: SB
   description: Silvestar is a fearless web developer eager to prove his worth
   author: Silvestar Bistrović
-  logo: /gfx/sb.svg
+  logo: /gfx/svg/logo.svg
 
 open_graph:
   pretty_url: true
@@ -16,23 +16,14 @@ open_graph:
   google_plus:
     google_plus_id: +SilvestarbistrovicFromHr
 
-disqus_shortname: silvestarbistrovic
-
-webfont_family:
-- Exo 2:300,300i,500,500i
-- Roboto+Mono:400
-
 menu:
   Home: /
   Blog: /categories/articles
   Portfolio: /portfolio
   About: /about-me
 
-sharing:
-  twitter: malimirkeccita
-  facebook: silvestarbistrovic.from.hr
-
 widgets:
+  breadcrumbs: true
   contact:
     mail: mailto:me@silvestarbistrovic.from.hr?Subject=Hello
     twitter: https://twitter.com/malimirkeccita
@@ -42,3 +33,10 @@ widgets:
     github: https://github.com/maliMirkec
     codepen: https://codepen.io/CiTA/
     lastfm: https://www.last.fm/user/maliMirkec
+  google_analytics:
+    tracking_id: UA-37881833-5
+  disqus:
+    shortname: silvestarbistrovic
+  sharing:
+    twitter: malimirkeccita
+    facebook: silvestarbistrovic.from.hr

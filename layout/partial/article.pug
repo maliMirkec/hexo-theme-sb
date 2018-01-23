@@ -1,6 +1,53 @@
-p Article
+.article
+  .article__intro
+    if (page && page.thumbnail)
+      - var img_big = page.thumbnail.replace('upload/', 'upload/f_auto,q_auto,w_640/');
+      - var img_small = page.thumbnail.replace('upload/', 'upload/f_auto,q_auto,w_320/');
+      - var img_srcset = img_small + " 320w, " + img_big + " 640w";
+      .article__thumbnail
+        img.article__thumb(src=img_big, alt=page.title, srcset=img_srcset, sizes="(max-width: 340px) 320px, 640px")
+    if (page && page.title)
+      h2.article__title= page.title
+    if (page && page.layout == "post" && page.date)
+      .article__details
+        - var article_published = "On: " + page.date.format(config.date_format);
+        .article__meta= article_published
+        if (page && page.author)
+          - var article_author = "By: " + page.author;
+          .article__meta= article_author
 
-//- <%- partial('article/content') %>
-//- <% if(item.layout == 'post') { %>
-//-   <%- partial('article/comments') %>
-//- <% } %>
+if (theme && theme.widgets.breadcrumbs)
+  ul.breadcrumb
+    li.breadcrumb__text Location:
+    li.breadcrumb__item
+      a.breadcrumb__link(href="/") Home
+    if (page && page.categories)
+      each kcat, vcat in page.categories
+        li.breadcrumb__item
+          a.breadcrumb__link(href=vcat.permalink)= vcat.name
+    if (page && page.title)
+      li.breadcrumb__item
+        a.breadcrumb__link(href=page.permalink)= page.title
+
+if (page && page.content)
+  .article__content!= page.content
+
+  if (page && page.layout == 'post')
+    .article__details
+      if (page && page.tags.length)
+        .tags
+          each ktag, vtag in page.tags
+            a.tags__link(href=vtag.path)= vtag.name
+
+      if (theme && theme.widgets.sharing)
+        .social
+          if (theme.widgets.sharing.twitter)
+            - var twitterLink = "https://twitter.com/intent/tweet?url=" + page.permalink + "&text=" + page.title + "&via=" + theme.widgets.sharing.twitter;
+            a.social__button(href=twitterLink, target="_blank") Share on Twitter
+          if (theme.widgets.sharing.facebook)
+            - var facebookLink = "https://facebook.com/sharer.php?u=" + page.permalink;
+            a.social__button(href=facebookLink, target="_blank") Share on Facebook
+
+
+if (page && page.layout == "post" && theme && theme.widgets.disqus)
+  include article/comments

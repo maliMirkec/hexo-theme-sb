@@ -1,20 +1,8 @@
-//- <% if (page.prev || page.next) { %>
-//-   <nav class="pagination">
-//-     <ul class="pagination__list">
-//-       <% if (page.prev){ %>
-//-         <li class="pagination__item">
-//-           <%- link_to(page.prev_link, 'Previous', {
-//-             class: 'pagination__link pagination__link--previous'
-//-           }) %>
-//-         </li>
-//-       <% } %>
-//-       <% if (page.next){ %>
-//-         <li class="pagination__item">
-//-           <%- link_to(page.next_link, 'Next', {
-//-             class: 'pagination__link pagination__link--next'
-//-           }) %>
-//-         </li>
-//-       <% } %>
-//-     </ul>
-//-   </nav>
-//- <% } %>
+nav.pagination
+  ul.pagination__list
+    if (page.prev)
+      .pagination__item
+        a.pagination__link(href=page.prev_link) Previous
+    if (page.next)
+      .pagination__item
+        a.pagination__link(href=page.next_link) Next

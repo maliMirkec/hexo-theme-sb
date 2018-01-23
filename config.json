@@ -1,7 +1,7 @@
 {
   "root": "./",
-  "dest": "dist/",
-  "src": "source/",
+  "dest": "source/",
+  "src": "src/",
   "bump": {
     "src": "package.json",
     "minorConfig": {
@@ -14,13 +14,13 @@
   "browserSync": {
     "browserSyncConfig": {
       "server": {
-        "baseDir": "./dist/"
+        "baseDir": "./source/"
       }
     }
   },
   "css": {
     "run": true,
-    "src": "source/scss/",
+    "src": "src/scss/",
     "dest": "css/",
     "styleLintConfig": {
       "reporters": [{
@@ -29,7 +29,7 @@
       }]
     },
     "sassConfig": {
-      "includePaths": ["./node_modules/modularscale-sass/stylesheets/", "./node_modules/sass-mq/", "./node_modules/normalize.css/", "./source/scss/", "./source/scss/components"]
+      "includePaths": ["./node_modules/modularscale-sass/stylesheets/", "./node_modules/sass-mq/", "./node_modules/normalize.css/", "./src/scss/", "./src/scss/components"]
     },
     "autoprefixedConfig": {
       "browsers": ["last 5 versions"],
@@ -41,12 +41,12 @@
   },
   "fonts": {
     "run": true,
-    "src": "source/fonts/",
+    "src": "src/fonts/",
     "dest": "fonts/"
   },
   "gfx": {
     "run": true,
-    "src": "source/gfx/",
+    "src": "src/gfx/",
     "dest": "gfx/",
     "gifsicleConfig": {
       "interlaced": true
@@ -196,8 +196,8 @@
     "src": "./layout/partial/head/favicon.pug",
     "dest": "./layout/partial/head/",
     "realFaviconConfig": {
-      "masterPicture": "./source/gfx/svg/sb-flat.svg",
-      "dest": "./dist/favicon/",
+      "masterPicture": "./src/gfx/svg/sb-flat.svg",
+      "dest": "./source/favicon/",
       "iconsPath": "/favicon/",
       "design": {
         "ios": {
@@ -272,9 +272,9 @@
   },
   "penthouse": {
     "run": true,
-    "src": "source/style.css",
+    "src": "src/style.css",
     "criticalCssConfig": {
-      "out": "./dist/css/style.critical.css",
+      "out": "./source/css/style.critical.css",
       "url": "http://localhost:3000",
       "width": 1366,
       "height": 768,
@@ -285,7 +285,7 @@
   },
   "js": {
     "run": true,
-    "src": "source/js/",
+    "src": "src/js/",
     "dest": "js/",
     "eslintConfig": {
       "configFile": "./.eslintrc.json",
@@ -314,7 +314,7 @@
   "sassdoc": {
     "run": true,
     "sassdocConfig": {
-      "dest": "./dist/docs/sass/",
+      "dest": "./source/docs/sass/",
       "package": {
         "title": "Starter project",
         "name": "starter-project",
@@ -340,8 +340,8 @@
     "dest": "styleguide/",
     "kssConfig": {
       "title": "Starter Project",
-      "source": "./source/scss/",
-      "destination": "./dist/docs/styleguide/",
+      "source": "./src/scss/",
+      "destination": "./source/docs/styleguide/",
       "css": [
         "/css/style.css",
         "/css/foft.css"
@@ -353,13 +353,13 @@
   },
   "jsdoc": {
     "run": true,
-    "src": ["./source/js/homepage.md", "./source/js/"],
+    "src": ["./src/js/homepage.md", "./src/js/"],
     "jsdocConfig": {
       "tags": {
         "allowUnknownTags": true
       },
       "opts": {
-        "destination": "./dist/docs/js/"
+        "destination": "./source/docs/js/"
       },
       "plugins": [
         "plugins/markdown"

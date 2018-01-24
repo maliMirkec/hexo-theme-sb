@@ -1,7 +1,0 @@
-head
-  include head/meta
-  include head/favicon
-  include head/og
-  include head/critical
-  - if(page && page.canonical)
-    link(rel="canonical", href=page.canonical)

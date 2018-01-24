@@ -1,0 +1,11 @@
+if (theme && theme.widgets.contact)
+  ul.contact
+    each kcontact, vcontact in theme.widgets.contact
+      li.contact__item
+        - var contact_src = "/gfx/svg/" + vcontact + ".svg";
+        if (kcontact == 'mail')
+          - var contact_href = "mailto:" + kcontact;
+        else
+          - var contact_href = kcontact;
+        a.tag(href=contact_href)
+          !=inline_svg(contact_src)

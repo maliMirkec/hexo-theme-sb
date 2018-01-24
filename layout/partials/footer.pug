@@ -1,0 +1,14 @@
+footer.footer
+  if (theme && theme.widgets.contact)
+    include widgets/contact
+  if (theme && theme.site.short_name)
+    .copyright
+      p= "&copy; " + theme.site.short_name + " " + new Date().getFullYear()
+
+if (theme && theme.widgets.google_analytics)
+  include widgets/ga
+
+if (page && page.layout == "post" && theme && theme.widgets.disqus)
+  include widgets/disqus
+
+include assets/style

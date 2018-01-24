@@ -193,8 +193,8 @@
   },
   "favicon": {
     "run": true,
-    "src": "./layout/partial/head/favicon.pug",
-    "dest": "./layout/partial/head/",
+    "src": "./layout/partial/assets/favicon.pug",
+    "dest": "./layout/partial/assets/",
     "realFaviconConfig": {
       "masterPicture": "./src/gfx/svg/sb-flat.svg",
       "dest": "./source/favicon/",
@@ -268,7 +268,7 @@
     "htmlminConfig": {
       "collapseWhitespace": true
     },
-    "inlineSourcePath": "dist"
+    "inlineSourcePath": "source"
   },
   "penthouse": {
     "run": true,

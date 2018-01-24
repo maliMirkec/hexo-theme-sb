@@ -1,0 +1,12 @@
+if (theme && theme.menu)
+  header.header
+    nav.nav
+      ul.nav__list
+        if (theme && theme.site.logo)
+          li.nav__item.nav__itemitem--logo
+            a.nav__link(href="/")
+              !=inline_svg(theme.site.logo)
+        each knav, vnav in theme.menu
+          li.nav__item
+            a.nav__link(href=url_for(knav))= vnav
+

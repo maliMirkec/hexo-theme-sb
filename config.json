@@ -193,8 +193,8 @@
   },
   "favicon": {
     "run": true,
-    "src": "./layout/partial/assets/favicon.pug",
-    "dest": "./layout/partial/assets/",
+    "src": "./layout/partials/assets/favicon.pug",
+    "dest": "./layout/partials/assets/",
     "realFaviconConfig": {
       "masterPicture": "./src/gfx/svg/sb-flat.svg",
       "dest": "./source/favicon/",

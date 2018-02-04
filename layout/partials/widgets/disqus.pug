@@ -1,0 +1,12 @@
+if(page && page.comments && theme && theme.widgets && theme.widgets.disqus && theme.widgets.disqus.shortname)
+  script.
+    var shortname = '#{theme.widgets.disqus.shortname}';
+
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      var type = #{page.comments} ? 'embed.js' : 'count.js';
+      dsq.src = '//' + shortname + '.disqus.com/' + type;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());

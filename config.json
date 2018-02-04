@@ -1,0 +1,483 @@
+{
+  "root": "./",
+  "dest": "source/",
+  "src": "src/",
+  "bump": {
+    "src": "package.json",
+    "minorConfig": {
+      "type": "minor"
+    },
+    "majorConfig": {
+      "type": "major"
+    }
+  },
+  "browserSync": {
+    "browserSyncConfig": {
+      "server": {
+        "baseDir": "./source/"
+      }
+    }
+  },
+  "css": {
+    "run": true,
+    "src": "src/scss/",
+    "dest": "css/",
+    "styleLintConfig": {
+      "reporters": [{
+        "formatter": "string",
+        "console": true
+      }]
+    },
+    "sassConfig": {
+      "includePaths": ["./node_modules/modularscale-sass/stylesheets/", "./node_modules/sass-mq/", "./node_modules/normalize.css/", "./src/scss/", "./src/scss/components"]
+    },
+    "autoprefixedConfig": {
+      "browsers": ["last 5 versions"],
+      "cascade": false
+    },
+    "renameConfig": {
+      "suffix": ".min"
+    }
+  },
+  "fonts": {
+    "run": true,
+    "src": "src/fonts/",
+    "dest": "fonts/"
+  },
+  "gfx": {
+    "run": true,
+    "src": "src/gfx/",
+    "dest": "gfx/",
+    "gifsicleConfig": {
+      "interlaced": true
+    },
+    "imageminMozjpegConfig": {
+      "quality": 90,
+      "progressive": true
+    },
+    "imageminPngquantConfig": {
+      "quality": 90
+    },
+    "svgoConfig": {
+      "plugins": [{
+          "cleanupAttrs": true
+        },
+        {
+          "removeDoctype": true
+        },
+        {
+          "removeComments": true
+        },
+        {
+          "removeXMLProcInst": true
+        },
+        {
+          "removeMetadata": true
+        },
+        {
+          "removeTitle": false
+        },
+        {
+          "removeDesc": false
+        },
+        {
+          "removeUselessDefs": true
+        },
+        {
+          "removeXMLNS": true
+        },
+        {
+          "removeEditorsNSData": true
+        },
+        {
+          "removeEmptyAttrs": true
+        },
+        {
+          "removeHiddenElems": true
+        },
+        {
+          "removeEditorsNSData": true
+        },
+        {
+          "removeEmptyText": true
+        },
+        {
+          "removeEmptyContainers": true
+        },
+        {
+          "removeViewBox": false
+        },
+        {
+          "cleanupEnableBackground": true
+        },
+        {
+          "convertStyleToAttrs": true
+        },
+        {
+          "convertColors": true
+        },
+        {
+          "convertPathData": true
+        },
+        {
+          "convertTransform": true
+        },
+        {
+          "removeUnknownsAndDefaults": true
+        },
+        {
+          "removeNonInheritableGroupAttrs": true
+        },
+        {
+          "removeUselessStrokeAndFill": true
+        },
+        {
+          "removeUnusedNS": true
+        },
+        {
+          "cleanupIDs": false
+        },
+        {
+          "cleanupNumericValues": true
+        },
+        {
+          "cleanupListOfValues": true
+        },
+        {
+          "moveElemsAttrsToGroup": true
+        },
+        {
+          "moveGroupAttrsToElems": false
+        },
+        {
+          "collapseGroups": true
+        },
+        {
+          "removeRasterImages": true
+        },
+        {
+          "mergePaths": true
+        },
+        {
+          "convertShapeToPath": false
+        },
+        {
+          "sortAttrs": true
+        },
+        {
+          "removeDimensions": true
+        },
+        {
+          "removeAttrs": false
+        },
+        {
+          "removeElementsByAttr": false
+        },
+        {
+          "addClassesToSVGElement": false
+        },
+        {
+          "addAttributesToSVGElement": false
+        },
+        {
+          "removeStyleElement": false
+        },
+        {
+          "removeScriptElement": false
+        },
+        {
+          "removeDimensions": false
+        }
+      ]
+    }
+  },
+  "favicon": {
+    "run": true,
+    "src": "./layout/partial/assets/favicon.pug",
+    "dest": "./layout/partial/assets/",
+    "realFaviconConfig": {
+      "masterPicture": "./src/gfx/svg/sb-flat.svg",
+      "dest": "./source/favicon/",
+      "iconsPath": "/favicon/",
+      "design": {
+        "ios": {
+          "pictureAspect": "backgroundAndMargin",
+          "backgroundColor": "#e01258",
+          "margin": "35%",
+          "assets": {
+            "ios6AndPriorIcons": true,
+            "ios7AndLaterIcons": true,
+            "precomposedIcons": true,
+            "declareOnlyDefaultIcon": true
+          }
+        },
+        "desktopBrowser": {},
+        "windows": {
+          "pictureAspect": "noChange",
+          "backgroundColor": "#e01258",
+          "onConflict": "override",
+          "assets": {
+            "windows80Ie10Tile": false,
+            "windows10Ie11EdgeTiles": {
+              "small": false,
+              "medium": true,
+              "big": false,
+              "rectangle": false
+            }
+          }
+        },
+        "androidChrome": {
+          "pictureAspect": "backgroundAndMargin",
+          "margin": "21%",
+          "backgroundColor": "#e01258",
+          "themeColor": "#e01258",
+          "manifest": {
+            "name": "Silvestar Bistrović Blog",
+            "display": "standalone",
+            "orientation": "notSet",
+            "onConflict": "override",
+            "declared": true
+          },
+          "assets": {
+            "legacyIcon": false,
+            "lowResolutionIcons": false
+          }
+        },
+        "safariPinnedTab": {
+          "pictureAspect": "silhouette",
+          "themeColor": "#e01258"
+        }
+      },
+      "settings": {
+        "compression": 2,
+        "scalingAlgorithm": "Cubic",
+        "errorOnImageTooSmall": false
+      },
+      "markupFile": "./faviconData.json"
+    }
+  },
+  "html": {
+    "run": true,
+    "src": "layout/",
+    "dest": "",
+    "renameConfig": {
+      "extname": ".html"
+    },
+    "pugConfig": {
+      "pretty": true,
+      "data": {
+        "page": {
+          "layout": "post",
+          "title": "Hexo Theme SB",
+          "thumbnail": "/gfx/png/SB-square.png",
+          "author": "Silvestar Bistrović",
+          "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, ipsa. Autem aut consectetur atque libero eveniet, qui laborum optio et, enim id excepturi hic illum possimus sed neque eum aspernatur animi, voluptates ex sequi quos rerum. Non molestiae, odio, quos repudiandae debitis sed perferendis alias minus quaerat error soluta vero tenetur excepturi voluptatem quas dolore culpa. Aliquid ipsum doloribus cumque sint itaque deserunt alias odit laudantium aut, quod ab quae et voluptatum explicabo! Ad incidunt qui quos quaerat officiis, doloremque iste enim. Dicta fugiat laboriosam unde at eligendi dolorem, quibusdam assumenda quia id facere eos. Eum culpa aliquam animi nulla ipsam, at possimus rerum officiis deleniti ea ex neque. Minima, asperiores fugit. Eligendi placeat beatae harum, illum nostrum, ipsam, quidem cupiditate quo sed in saepe? Error inventore sed obcaecati natus animi quia fugit doloremque enim! In perspiciatis illum accusamus adipisci quidem ipsa eos repellendus error, suscipit laudantium asperiores iste omnis officia quasi ut recusandae autem quisquam quia dolorem, quo, ratione id. Est beatae velit at consectetur ut maiores necessitatibus animi et cupiditate exercitationem, pariatur similique numquam harum veritatis, dicta, libero quaerat officiis deserunt iste. Tempore beatae deserunt at! Repudiandae molestias quaerat dignissimos quo voluptatum quasi ad inventore, dolores atque placeat.",
+          "prev": {
+            "title": "Previous",
+            "path": "/"
+          },
+          "next": {
+            "title": "Next",
+            "path": "/"
+          }
+        },
+        "theme": {
+          "site": {
+            "full_name": "Hexo Theme SB",
+            "short_name": "SB",
+            "description": "Hexo Theme SB - simple, clean and responsive",
+            "logo": "/gfx/png/logo.png",
+            "language": "en"
+          },
+          "home_page": [{
+            "title": "Silvestar Bistrović",
+            "paragraphs": ["Fearless web developer"]
+            }, {
+              "title": "Specializations",
+              "paragraphs": [
+              "Frontend",
+              "User Interface",
+              "Wordpress",
+              "Web Optimization"
+            ]
+          }, {
+            "title": "Projects",
+            "links": {
+              "Starter Project": "//starter.silvestarbistrovic.from.hr",
+              "Hexo Theme SB": "//hexo-theme-sb.silvestarbistrovic.from.hr",
+              "Personal Website": "//www.silvestarbistrovic.from.hr/portfolio"
+            }
+          }, {
+            "title": "Links",
+            "links": {
+              "Mail": "mailto:me@silvestarbistrovic.from.hr?Subject=Hello",
+              "Twitter": "//twitter.com/malimirkeccita",
+              "Github": "//github.com/maliMirkec"
+            }
+          }],
+          "menu": {
+            "centered": true,
+            "display_logo": true,
+            "items": {
+              "Home": "/",
+              "Archive": "/archive.html",
+              "Page": "/page.html",
+              "Post": "/post.html"
+            }
+          },
+          "widgets": {
+            "contact": {
+              "mail": "mailto:me@silvestarbistrovic.from.hr?Subject=Hello",
+              "twitter": "//twitter.com/malimirkeccita",
+              "github": "//github.com/maliMirkec"
+            },
+            "sharing": {
+              "twitter": "malimirkeccita",
+              "facebook": "silvestarbistrovic.from.hr"
+            }
+          }
+        },
+        "config": {
+          "title": "Hexo Theme SB"
+        }
+      }
+    },
+    "htmllintConfig": ".htmllintrc",
+    "htmlminConfig": {
+      "collapseWhitespace": true
+    },
+    "inlineSourcePath": "source"
+  },
+  "penthouse": {
+    "run": true,
+    "src": "style.css",
+    "criticalCssConfigs": [{
+      "out": "./source/css/style.critical.css",
+      "url": "http://localhost:3000",
+      "width": 1920,
+      "height": 1200,
+      "keepLargerMediaQueries": true,
+      "strict": false,
+      "blockJSRequests": false
+    }]
+  },
+  "js": {
+    "run": true,
+    "src": "src/js/",
+    "dest": "js/",
+    "eslintConfig": {
+      "configFile": "./.eslintrc.json",
+      "fix": true,
+      "quiet": true
+    },
+    "includeConfig": {
+      "includePaths": [
+        "./node_modules"
+      ]
+    },
+    "babelConfig": {
+      "presets": ["env"]
+    },
+    "standardConfig": {
+      "breakOnError": false,
+      "showRuleNames": true,
+      "standard": {
+        "globals": ["requestAnimationFrame", "sessionStorage"]
+      }
+    },
+    "renameConfig": {
+      "suffix": ".min"
+    }
+  },
+  "gzip": {
+    "run": false,
+    "src": "",
+    "dest": "",
+    "gzipConfig": {}
+  },
+  "kill": {
+    "dev": {
+      "run": false
+    },
+    "docs": {
+      "run": false
+    },
+    "dist": {
+      "run": false
+    },
+    "deploy": {
+      "run": true
+    },
+    "timeout": 20000
+  },
+  "sassdoc": {
+    "run": true,
+    "sassdocConfig": {
+      "dest": "./source/docs/sass/",
+      "package": {
+        "title": "Starter project",
+        "name": "starter-project",
+        "description": "A set of gulp tasks that helps you develop high performant websites using latest best practices.",
+        "license": "MIT",
+        "homepage": "https://github.com/maliMirkec/starter-project"
+      },
+      "autofill": true,
+      "verbose": true,
+      "display": {
+        "access": ["public", "private"],
+        "alias": true,
+        "watermark": true
+      },
+      "groups": {
+        "undefined": "Misc"
+      },
+      "basePath": "http://localhost:3000/docs/sass/"
+    }
+  },
+  "kss": {
+    "run": true,
+    "dest": "styleguide/",
+    "kssConfig": {
+      "title": "Starter Project",
+      "source": "./src/scss/",
+      "destination": "./source/docs/styleguide/",
+      "css": [
+        "/css/style.css",
+        "/css/foft.css"
+      ],
+      "js": [
+        "/js/foftFontLoading.js"
+      ]
+    }
+  },
+  "jsdoc": {
+    "run": true,
+    "src": ["./src/js/homepage.md", "./src/js/"],
+    "jsdocConfig": {
+      "tags": {
+        "allowUnknownTags": true
+      },
+      "opts": {
+        "destination": "./source/docs/js/"
+      },
+      "plugins": [
+        "plugins/markdown"
+      ],
+      "templates": {
+        "cleverLinks": true,
+        "monospaceLinks": false,
+        "default": {
+          "outputSourceFiles": true
+        },
+        "path": "ink-docstrap",
+        "theme": "simplex",
+        "navType": "vertical",
+        "linenums": true,
+        "dateFormat": "MMMM Do YYYY, h:mm:ss a"
+      }
+    }
+  },
+  "gulp": {
+    "src": "_gulp/"
+  }
+}

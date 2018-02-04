@@ -1,0 +1,69 @@
+/// Function for converting a value to rem unit
+/// @access public
+/// @author Silvestar Bistrović <me@silvestarbistrovic.from.hr>
+/// @example font-size: rem(20px, 'mobile');
+/// @group 3.1 Helpers
+/// @name rem
+/// @since 1.0.0
+/// @param {Unit} $size A value with unit (e.g. 20px)
+/// @param {String} $media ['desktop'] A media, (e.g. 'desktop' or 'mobile')
+/// @return {Unit} Returns a value converted in rem; returns 1rem if media is not 'desktop' or 'mobile'
+
+@function rem($size: 20px, $media: 'desktop') {
+  @if $media == 'desktop' {
+    @return calc(#{strip-unit($size / $font-size--desktop)} * 1rem);
+  } @else if $media == 'mobile' {
+    @return calc(#{strip-unit($size / $font-size--mobile)} * 1rem);
+  } @else {
+    @return 1rem;
+  }
+}
+
+@mixin zero-box() {
+  padding: 0;
+  margin: 0;
+}
+
+@mixin bsh($color: $color1) {
+  box-shadow: 0 1px 4px -1px $color;
+}
+
+@mixin tsh($color: $color1) {
+  text-shadow: 0 1px 1px $color;
+}
+
+@function tracking($tracking) {
+  @return calc(#{$tracking} / 1000 * 1em);
+}
+
+@mixin ls($tracking) {
+  letter-spacing: tracking(#{strip-unit($tracking)});
+}
+
+@mixin tra($transition-duration: $trd, $transition-animation: $tra) {
+  transition: all $transition-duration $transition-animation;
+}
+
+@function bg-v($main-color: $color1) {
+  @return radial-gradient(
+    circle at center bottom,
+    transparentize(adjust-hue($main-color, 5deg), .6),
+    transparentize($main-color, .4)
+  ), linear-gradient(
+    to right,
+    transparentize($main-color, .5) 50%,
+    transparentize($main-color, .6) 50%
+  );
+}
+
+@function bg-h($main-color: $color1) {
+  @return radial-gradient(
+    circle at center bottom,
+    transparentize(adjust-hue($main-color, 5deg), .4),
+    transparentize($main-color, .6)
+  ), linear-gradient(
+    to bottom,
+    transparentize($main-color, .6) 48%,
+    transparentize($main-color, .3) 48%
+  );
+}

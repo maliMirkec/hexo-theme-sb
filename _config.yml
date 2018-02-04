@@ -1,0 +1,69 @@
+site:
+  full_name: SB - Silvestar's personal website
+  short_name: SB
+  description: Silvestar is a fearless web developer eager to prove his worth
+  logo: /gfx/svg/logo.svg
+  language: en
+
+home_page:
+  - section:
+    title: Silvestar Bistrović
+    paragraphs:
+     - Fearless web developer
+  - section:
+    paragraphs:
+      - Frontend Developer
+      - UI Specialist
+      - Osijek, Croatia
+  - section:
+    title: Projects
+    links:
+      Starter Project: //www.npmjs.com/package/starter-project
+      Contiamo: /portfolio#contiamo-com
+      Irina and Matej: /portfolio#irinaandmatej-com
+      Atika Interijeri: /portfolio#atika-interijeri-hr
+  - section:
+    title: Links
+    links:
+      Blog: /categories/articles
+      Portfolio: /portfolio
+      About me: /about-me
+      me@silvestarbistrovic.from.hr: mailto:me@silvestarbistrovic.from.hr?Subject=Hello
+
+open_graph:
+  pretty_url: true
+  image: /gfx/SB-big.png
+  fb:
+    fb_id: 340933169673372
+    fb_admins: malimirkeccita
+  twitter:
+    twitter_id: malimirkeccita
+  google_plus:
+    google_plus_id: +SilvestarbistrovicFromHr
+
+menu:
+  centered: true
+  display_logo: true
+  items:
+    Home: /
+    Blog: /categories/articles
+    Portfolio: /portfolio
+    About: /about-me
+
+widgets:
+  contact:
+    mail: mailto:me@silvestarbistrovic.from.hr?Subject=Hello
+    twitter: //twitter.com/malimirkeccita
+    linkedin: //www.linkedin.com/in/starbist/
+    facebook: //www.facebook.com/silvestarbistrovic.from.hr/
+    medium: //medium.com/@malimirkeccita
+    github: //github.com/maliMirkec
+    codepen: //codepen.io/CiTA/
+    lastfm: //www.last.fm/user/maliMirkec
+  google_analytics:
+    tracking_id: UA-37881833-5
+  disqus:
+    shortname: silvestarbistrovic
+  sharing:
+    twitter: malimirkeccita
+    facebook: silvestarbistrovic.from.hr

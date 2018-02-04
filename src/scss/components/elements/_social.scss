@@ -1,0 +1,46 @@
+// .social__button {
+//   font-size: ms(-1);
+//   color: $white;
+//   padding: 3px 6px;
+//   margin-bottom: 6px;
+//   border-radius: 3px;
+//   transition: background-color .15s ease-in-out;
+
+//   &:not(:last-child) {
+//     margin-right: 6px;
+//   }
+
+//   &:hover,
+//   &:focus,
+//   &:active {
+//     color: $white;
+//   }
+// }
+
+// .social__button--twitter {
+//   background-image: radial-gradient(
+//     circle at center center,
+//     transparentize($twitter, .18),
+//     transparentize($twitter, .36)
+//   );
+
+//   &:hover,
+//   &:focus,
+//   &:active {
+//     background-color: $twitter;
+//   }
+// }
+
+// .social__button--facebook {
+//   background-image: radial-gradient(
+//     circle at center center,
+//     transparentize($facebook, .18),
+//     transparentize($facebook, .36)
+//   );
+
+//   &:hover,
+//   &:focus,
+//   &:active {
+//     background-color: $facebook;
+//   }
+// }

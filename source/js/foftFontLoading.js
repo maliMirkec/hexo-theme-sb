@@ -5,7 +5,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 /**
  * A better font loading using FontFaceObserver.
  *
- * @module Critical FOFT
+ * @module CriticalFOFT
  * @author Zach Leatherman
  * @see https://www.zachleat.com/web/comprehensive-webfonts/#critical-foft
  */
@@ -208,7 +208,7 @@ var FontFaceObserver = void 0;
  * If fonts are already loaded, then skip loading.
  */
 (function () {
-  if (window.sessionStorage.criticalFoftDataUriFontsLoaded) {
+  if (window.sessionStorage.criticalFoftDataUriFontsLoaded1) {
     document.documentElement.className += ' fonts-stage-1 fonts-stage-2';
     return;
   }
@@ -220,7 +220,10 @@ var FontFaceObserver = void 0;
    * @name fontASubset
    * @type {Object}
    */
-  var fontASubset = new FontFaceObserver('LatoSubset');
+  var fontASubset = new FontFaceObserver('Vollkorn Subset', {
+    weight: 'normal',
+    style: 'normal'
+  });
 
   /**
    * A promise that adds 'fonts-stage-1' if {@link fontASubset}
@@ -239,49 +242,99 @@ var FontFaceObserver = void 0;
      * @name fontA
      * @type {Object}
      */
-    var fontA = new FontFaceObserver('Lato');
+    var fontA = new FontFaceObserver('Vollkorn', {
+      weight: 'normal',
+      style: 'normal'
+    });
 
-    /**
-     * Second font type.
-     *
-     * @const
-     * @name fontB
-     * @type {Object}
-     */
-    var fontB = new FontFaceObserver('LatoBold');
-
-    /**
-     * Third font type.
-     *
-     * @const
-     * @name fontC
-     * @type {Object}
-     */
-    var fontC = new FontFaceObserver('LatoItalic');
-
-    /**
-     * Fourth font type.
-     *
-     * @const
-     * @name fontD
-     * @type {Object}
-     */
-    var fontD = new FontFaceObserver('LatoBoldItalic');
+    console.log("Subset font1 loaded.");
 
     /**
      * A promise that adds 'fonts-stage-2' if
-     * {@link fontA}, {@link fontB}, {@link fontC}, {@link fontD}
+     * {@link fontA}
      * are loaded successfully.
      * Also, set Critical FOFT session variable to true.
      *
      * @method
      * @name Promise
      */
-    Promise.all([fontA.load(), fontB.load(), fontC.load(), fontD.load()]).then(function () {
+    Promise.all([fontA.load()]).then(function () {
       document.documentElement.className += ' fonts-stage-2';
 
       // Optimization for Repeat Views
-      window.sessionStorage.criticalFoftDataUriFontsLoaded = true;
+      window.sessionStorage.criticalFoftDataUriFontsLoaded1 = true;
+
+      console.log("Main font1 loaded.");
+    }, function () {
+      console.log("Main font1 not loaded.");
     });
+  }, function () {
+    console.log("Subset font1 not loaded.");
+  });
+})();
+
+(function () {
+  if (window.sessionStorage.criticalFoftDataUriFontsLoaded2) {
+    document.documentElement.className += ' fonts-stage-3 fonts-stage-4';
+    return;
+  }
+
+  /**
+   * A subset of default font type.
+   *
+   * @const
+   * @name fontASubset
+   * @type {Object}
+   */
+  var fontBSubset = new FontFaceObserver('Playfair Display Bold Subset', {
+    weight: 700,
+    style: 'normal'
+  });
+
+  /**
+   * A promise that adds 'fonts-stage-1' if {@link fontASubset}
+   * is loaded successfully.
+   *
+   * @method
+   * @name Promise
+   */
+  Promise.all([fontBSubset.load()]).then(function () {
+    document.documentElement.className += ' fonts-stage-3';
+
+    /**
+     * Default font type.
+     *
+     * @const
+     * @name fontA
+     * @type {Object}
+     */
+    var fontB = new FontFaceObserver('Playfair Display Bold', {
+      weight: 700,
+      style: 'normal'
+    });
+
+    console.log("Subset font2 loaded.");
+
+    /**
+     * A promise that adds 'fonts-stage-2' if
+     * {@link fontA}
+     * are loaded successfully.
+     * Also, set Critical FOFT session variable to true.
+     *
+     * @method
+     * @name Promise
+     */
+    Promise.all([fontB.load()]).then(function () {
+      document.documentElement.className += ' fonts-stage-4';
+
+      // Optimization for Repeat Views
+      window.sessionStorage.criticalFoftDataUriFontsLoaded2 = true;
+
+      console.log("Main font2 loaded.");
+    }, function () {
+      console.log("Main font2 not loaded.");
+    });
+  }, function () {
+    console.log("Subset font2 not loaded.");
   });
 })();

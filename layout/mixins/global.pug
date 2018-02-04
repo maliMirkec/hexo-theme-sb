@@ -1,0 +1,9 @@
+mixin inlineSvg(file)
+  if (file.indexOf('.svg') != -1)
+    if (inline_svg)
+      !=inline_svg(file)
+  else
+    img(src=file, alt="Inline image")
+
+if (!url_for)
+  - var url_for = link => link

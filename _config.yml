@@ -2,8 +2,33 @@ site:
   full_name: SB - Silvestar's personal website
   short_name: SB
   description: Silvestar is a fearless web developer eager to prove his worth
-  author: Silvestar Bistrović
   logo: /gfx/svg/logo.svg
+  language: en
+
+home_page:
+  - section:
+    title: Silvestar Bistrović
+    paragraphs:
+     - Fearless web developer
+  - section:
+    paragraphs:
+      - Frontend Developer
+      - UI Specialist
+      - Osijek, Croatia
+  - section:
+    title: Projects
+    links:
+      Starter Project: //www.npmjs.com/package/starter-project
+      Contiamo: /portfolio#contiamo-com
+      Irina and Matej: /portfolio#irinaandmatej-com
+      Atika Interijeri: /portfolio#atika-interijeri-hr
+  - section:
+    title: Links
+    links:
+      Blog: /categories/articles
+      Portfolio: /portfolio
+      About me: /about-me
+      me@silvestarbistrovic.from.hr: mailto:me@silvestarbistrovic.from.hr?Subject=Hello
 
 open_graph:
   pretty_url: true
@@ -17,22 +42,24 @@ open_graph:
     google_plus_id: +SilvestarbistrovicFromHr
 
 menu:
-  Home: /
-  Blog: /categories/articles
-  Portfolio: /portfolio
-  About: /about-me
+  centered: true
+  display_logo: true
+  items:
+    Home: /
+    Blog: /categories/articles
+    Portfolio: /portfolio
+    About: /about-me
 
 widgets:
-  breadcrumbs: true
   contact:
     mail: mailto:me@silvestarbistrovic.from.hr?Subject=Hello
-    twitter: https://twitter.com/malimirkeccita
-    linkedin: https://www.linkedin.com/in/starbist/
-    facebook: https://www.facebook.com/silvestarbistrovic.from.hr/
-    medium: https://medium.com/@malimirkeccita
-    github: https://github.com/maliMirkec
-    codepen: https://codepen.io/CiTA/
-    lastfm: https://www.last.fm/user/maliMirkec
+    twitter: //twitter.com/malimirkeccita
+    linkedin: //www.linkedin.com/in/starbist/
+    facebook: //www.facebook.com/silvestarbistrovic.from.hr/
+    medium: //medium.com/@malimirkeccita
+    github: //github.com/maliMirkec
+    codepen: //codepen.io/CiTA/
+    lastfm: //www.last.fm/user/maliMirkec
   google_analytics:
     tracking_id: UA-37881833-5
   disqus:

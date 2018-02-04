@@ -6,9 +6,7 @@
   "author": "Silvestar Bistrović <malimirkeccita@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "hexo-filter-asset-inline": "^1.1.1",
-    "hexo-render-pug": "^1.2.0",
-    "starter-project": "1.1.33",
+    "starter-project": "^1.1.49",
     "yarn": "^0.27.5"
   }
 }

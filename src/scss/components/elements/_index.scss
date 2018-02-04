@@ -1,0 +1,57 @@
+// // index animation duration
+// $dur: .6;
+
+// .index {
+//   min-height: calc(100vh - 84px);
+//   padding: 10vh 0 20vh;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: space-around;
+//   position: relative;
+//   overflow: hidden;
+//   background-image: linear-gradient(
+//     to bottom right,
+//     transparentize($color1, .15),
+//     transparentize($color2, .15)
+//   );
+//   transform-origin: top center;
+//   opacity: 0;
+//   transform: scale(0);
+
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     top: 100%;
+//     left: 0;
+//     right: 0;
+//     height: 100vh;
+//     background-color: $white;
+//     transform-origin: bottom left;
+//     transform: skew(0, -5deg);
+//   }
+// }
+
+// .index__content {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// }
+
+// .index__title {
+//   text-transform: uppercase;
+//   color: transparentize($white, .6);
+//   font-size: ms(2);
+// }
+
+// .index__link {
+//   font-size: ms(5);
+//   color: transparentize($white, .3);
+//   transition: color .15s ease-in-out;
+
+//   &:hover,
+//   &:focus,
+//   &:active {
+//     color: $white;
+//   }
+// }

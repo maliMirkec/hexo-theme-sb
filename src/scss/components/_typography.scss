@@ -55,7 +55,7 @@ html {
 // Styleguide: Typography.Paragraphs
 body {
   font-size: ms(0);
-  line-height: 1.5;
+  line-height: $line-height;
 }
 
 // Headings
@@ -75,8 +75,25 @@ body {
 // Styleguide: Typography.Headings
 @for $i from 1 through 6 {
   h#{$i} {
-    font-size: ms(7 - $i);
+    font-size: ms(5 - $i);
+    margin-top: ms(10 - $i);
   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+p {
+  margin-top: ms(1);
 }
 
 // Code Block
@@ -95,4 +112,7 @@ code {
   line-height: 1;
 }
 
+::selection {
+  background-color: lighten($color1, 44%);
+}
 

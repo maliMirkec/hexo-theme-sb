@@ -9,41 +9,32 @@ if (page && page.posts)
         - var title = page.year + (page.month ? '/' + page.month : '');
       else
         - var title = "Archives";
-    if (title)
+    if (title && page && page.layout == "archive")
       h1.articles__title= title
     each vpost, kpost in page.posts.toArray()
       article.article
+        if (vpost && vpost.path && vpost.title)
+          h1.article__title
+            a.link(href=url_for(vpost.path))= vpost.title
         if (vpost && vpost.thumbnail)
           - var img_big = vpost.thumbnail.replace('upload/', 'upload/f_auto,q_auto,w_640/');
           - var img_small = vpost.thumbnail.replace('upload/', 'upload/f_auto,q_auto,w_320/');
           - var img_srcset = img_small + " 320w, " + img_big + " 640w";
           a.article__thumb(href=url_for(vpost.path))
             img(src=img_big, alt=vpost.title, srcset=img_srcset sizes="(max-width: 340px) 320px, 640px")
-        if (vpost && vpost.path && vpost.title)
-          h2.article__title
-            a.link(href=vpost.path)= vpost.title
-        if (vpost && vpost.date)
-          .article__details
-            - var article_published = "On: " + vpost.date.format(config.date_format);
-            span.tag= article_published
-            if (vpost && vpost.author)
-              - var article_author = "By: " + vpost.author;
-              span.tag= article_author
-
         if (vpost && vpost.excerpt)
           .content!= vpost.excerpt
 
         if (vpost && vpost.path)
-          .article__details
-            a.tag(href=vpost.path) Read more
+          p
+            a.tally(href=url_for(vpost.path)) Read more
 
 if (page && (page.prev || page.next))
   nav.pagination
-    ul.pagination__list
+    ul.pagination__list.pagination__list--inline
       if (page && page.prev)
         li.pagination__item
-          a.pagination__link(href=page.prev_link) Previous
+          a.pagination__link.pagination__link--prev(href=url_for(page.prev_link)) Previous
       if (page && page.next)
         li.pagination__item
-          a.pagination__link(href=page.next_link) Next
-
+          a.pagination__link.pagination__link--next(href=url_for(page.next_link)) Next

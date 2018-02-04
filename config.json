@@ -193,8 +193,8 @@
   },
   "favicon": {
     "run": true,
-    "src": "./layout/partials/assets/favicon.pug",
-    "dest": "./layout/partials/assets/",
+    "src": "./layout/partial/assets/favicon.pug",
+    "dest": "./layout/partial/assets/",
     "realFaviconConfig": {
       "masterPicture": "./src/gfx/svg/sb-flat.svg",
       "dest": "./source/favicon/",
@@ -232,7 +232,8 @@
           "backgroundColor": "#e01258",
           "themeColor": "#e01258",
           "manifest": {
-            "display": "browser",
+            "name": "Silvestar Bistrović Blog",
+            "display": "standalone",
             "orientation": "notSet",
             "onConflict": "override",
             "declared": true
@@ -258,11 +259,88 @@
   "html": {
     "run": true,
     "src": "layout/",
+    "dest": "",
     "renameConfig": {
       "extname": ".html"
     },
     "pugConfig": {
-      "pretty": true
+      "pretty": true,
+      "data": {
+        "page": {
+          "layout": "post",
+          "title": "Hexo Theme SB",
+          "thumbnail": "/gfx/png/SB-square.png",
+          "author": "Silvestar Bistrović",
+          "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, ipsa. Autem aut consectetur atque libero eveniet, qui laborum optio et, enim id excepturi hic illum possimus sed neque eum aspernatur animi, voluptates ex sequi quos rerum. Non molestiae, odio, quos repudiandae debitis sed perferendis alias minus quaerat error soluta vero tenetur excepturi voluptatem quas dolore culpa. Aliquid ipsum doloribus cumque sint itaque deserunt alias odit laudantium aut, quod ab quae et voluptatum explicabo! Ad incidunt qui quos quaerat officiis, doloremque iste enim. Dicta fugiat laboriosam unde at eligendi dolorem, quibusdam assumenda quia id facere eos. Eum culpa aliquam animi nulla ipsam, at possimus rerum officiis deleniti ea ex neque. Minima, asperiores fugit. Eligendi placeat beatae harum, illum nostrum, ipsam, quidem cupiditate quo sed in saepe? Error inventore sed obcaecati natus animi quia fugit doloremque enim! In perspiciatis illum accusamus adipisci quidem ipsa eos repellendus error, suscipit laudantium asperiores iste omnis officia quasi ut recusandae autem quisquam quia dolorem, quo, ratione id. Est beatae velit at consectetur ut maiores necessitatibus animi et cupiditate exercitationem, pariatur similique numquam harum veritatis, dicta, libero quaerat officiis deserunt iste. Tempore beatae deserunt at! Repudiandae molestias quaerat dignissimos quo voluptatum quasi ad inventore, dolores atque placeat.",
+          "prev": {
+            "title": "Previous",
+            "path": "/"
+          },
+          "next": {
+            "title": "Next",
+            "path": "/"
+          }
+        },
+        "theme": {
+          "site": {
+            "full_name": "Hexo Theme SB",
+            "short_name": "SB",
+            "description": "Hexo Theme SB - simple, clean and responsive",
+            "logo": "/gfx/png/logo.png",
+            "language": "en"
+          },
+          "home_page": [{
+            "title": "Silvestar Bistrović",
+            "paragraphs": ["Fearless web developer"]
+            }, {
+              "title": "Specializations",
+              "paragraphs": [
+              "Frontend",
+              "User Interface",
+              "Wordpress",
+              "Web Optimization"
+            ]
+          }, {
+            "title": "Projects",
+            "links": {
+              "Starter Project": "//starter.silvestarbistrovic.from.hr",
+              "Hexo Theme SB": "//hexo-theme-sb.silvestarbistrovic.from.hr",
+              "Personal Website": "//www.silvestarbistrovic.from.hr/portfolio"
+            }
+          }, {
+            "title": "Links",
+            "links": {
+              "Mail": "mailto:me@silvestarbistrovic.from.hr?Subject=Hello",
+              "Twitter": "//twitter.com/malimirkeccita",
+              "Github": "//github.com/maliMirkec"
+            }
+          }],
+          "menu": {
+            "centered": true,
+            "display_logo": true,
+            "items": {
+              "Home": "/",
+              "Archive": "/archive.html",
+              "Page": "/page.html",
+              "Post": "/post.html"
+            }
+          },
+          "widgets": {
+            "contact": {
+              "mail": "mailto:me@silvestarbistrovic.from.hr?Subject=Hello",
+              "twitter": "//twitter.com/malimirkeccita",
+              "github": "//github.com/maliMirkec"
+            },
+            "sharing": {
+              "twitter": "malimirkeccita",
+              "facebook": "silvestarbistrovic.from.hr"
+            }
+          }
+        },
+        "config": {
+          "title": "Hexo Theme SB"
+        }
+      }
     },
     "htmllintConfig": ".htmllintrc",
     "htmlminConfig": {
@@ -272,16 +350,16 @@
   },
   "penthouse": {
     "run": true,
-    "src": "src/style.css",
-    "criticalCssConfig": {
+    "src": "style.css",
+    "criticalCssConfigs": [{
       "out": "./source/css/style.critical.css",
       "url": "http://localhost:3000",
-      "width": 1366,
-      "height": 768,
+      "width": 1920,
+      "height": 1200,
       "keepLargerMediaQueries": true,
       "strict": false,
       "blockJSRequests": false
-    }
+    }]
   },
   "js": {
     "run": true,
@@ -311,6 +389,27 @@
       "suffix": ".min"
     }
   },
+  "gzip": {
+    "run": false,
+    "src": "",
+    "dest": "",
+    "gzipConfig": {}
+  },
+  "kill": {
+    "dev": {
+      "run": false
+    },
+    "docs": {
+      "run": false
+    },
+    "dist": {
+      "run": false
+    },
+    "deploy": {
+      "run": true
+    },
+    "timeout": 20000
+  },
   "sassdoc": {
     "run": true,
     "sassdocConfig": {
@@ -318,7 +417,7 @@
       "package": {
         "title": "Starter project",
         "name": "starter-project",
-        "description": "Gulp; .editorconfig; .jshintrc; .gitignore; SCSS: reset, locks, system fonts;",
+        "description": "A set of gulp tasks that helps you develop high performant websites using latest best practices.",
         "license": "MIT",
         "homepage": "https://github.com/maliMirkec/starter-project"
       },
@@ -379,6 +478,6 @@
     }
   },
   "gulp": {
-    "src": "node_modules/starter-project/gulp/"
+    "src": "_gulp/"
   }
 }

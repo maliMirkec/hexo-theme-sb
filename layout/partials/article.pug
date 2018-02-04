@@ -1,52 +1,75 @@
 .article
+  if (page && page.title)
+    h1.article__title= page.title
   if (page && page.thumbnail)
     - var img_big = page.thumbnail.replace('upload/', 'upload/f_auto,q_auto,w_640/');
     - var img_small = page.thumbnail.replace('upload/', 'upload/f_auto,q_auto,w_320/');
     - var img_srcset = img_small + " 320w, " + img_big + " 640w";
-    .article__thumbnail
-      img.article__thumb(src=img_big, alt=page.title, srcset=img_srcset, sizes="(max-width: 340px) 320px, 640px")
-  if (page && page.title)
-    h2.article__title= page.title
-  if (page && page.layout == "post" && page.date)
-    .article__details
-      - var article_published = "On: " + page.date.format(config.date_format);
-      span.tag= article_published
-      if (page && page.author)
-        - var article_author = "By: " + page.author;
-        span.tag= article_author
-
-if (theme && theme.widgets.breadcrumbs)
-  ul.breadcrumbs
-    li.breadcrumbs__item Location:
-    li.breadcrumbs__item
-      a.tag(href="/") Home
-    if (page && page.categories)
-      each kcat, vcat in page.categories
-        li.breadcrumbs__item
-          a.tag(href=vcat.permalink)= vcat.name
-    if (page && page.title)
-      li.breadcrumbs__item
-        a.tag(href=page.permalink)= page.title
-
-if (page && page.content)
-  .article__content!= page.content
-
+    .article__thumb
+      img(src=img_big, alt=page.title, srcset=img_srcset, sizes="(max-width: 340px) 320px, 640px")
+  if (page && page.layout == "post")
+    .details
+      if (page && page.date)
+        ul.details__list
+          li.details__item
+            span.text On:
+          li.details__item
+            span.tally= page.date.format(config.date_format)
+          if (page && page.author)
+            li.details__item
+              span.text By:
+            li.details__item
+              span.tally= page.author
+      if (page && page.categories)
+        ul.details__list
+          li.details__item
+            span.text Location:
+          li.details__item
+            a.tally(href="/") Home
+          if (page && page.categories)
+            - page.categories.each(function(cat){
+              li.details__item
+                - var categoryName = cat.name.length < 30 ? cat.name : cat.name.substring(0, 29) + '...';
+                a.tally(href=url_for(cat.path))= categoryName
+            - });
+          if (page && page.title)
+            li.details__item
+              - var pageTitle = page.title.length < 30 ? page.title : page.title.substring(0, 29) + '...';
+              a.tally(href=url_for(page.path))= pageTitle
+  if (page && page.content)
+    .content!= page.content
+  if (page && page.photos)
+    .gallery
+      each photo in page.photos
+        p
+          img.gallery__item(src=photo, alt=page.title)
   if (page && page.layout == 'post')
-    .article__details
-      if (page && page.tags.length)
-        .tags
-          each ktag, vtag in page.tags
-            a.tag(href=vtag.path)= vtag.name
-
-      if (theme && theme.widgets.sharing)
+    .details
+      if (page && page.tags)
+        ul.details__list
+          - page.tags.each(function(tag){
+            li.details__item
+              a.tally(href=url_for(tag.path))= tag.name
+          - });
+      if (theme && theme.widgets && theme.widgets.sharing)
         .social
           if (theme.widgets.sharing.twitter)
             - var twitterLink = "https://twitter.com/intent/tweet?url=" + page.permalink + "&text=" + page.title + "&via=" + theme.widgets.sharing.twitter;
-            a.tag(href=twitterLink, target="_blank") Share on Twitter
+            a.tally(href=twitterLink, target="_blank") Share on Twitter
           if (theme.widgets.sharing.facebook)
             - var facebookLink = "https://facebook.com/sharer.php?u=" + page.permalink;
-            a.tag(href=facebookLink, target="_blank") Share on Facebook
-
-
-if (page && page.layout == "post" && theme && theme.widgets.disqus)
-  include widgets/comments
+            a.tally(href=facebookLink, target="_blank") Share on Facebook
+  if (page && (page.prev || page.next))
+    nav.pagination
+      p More articles:
+      ul.pagination__list
+        if (page && page.prev)
+          li.pagination__item
+            - var prevTitle = page.prev.title ? page.prev.title: "Previous";
+            a.pagination__link.pagination__link--prev(href=url_for(page.prev.path))= prevTitle
+        if (page && page.next)
+          li.pagination__item
+            - var nextTitle = page.next.title ? page.next.title: "Next";
+            a.pagination__link.pagination__link--next(href=url_for(page.next.path))= nextTitle
+  if (page && page.layout == "post" && theme && theme.widgets && theme.widgets.disqus)
+    include widgets/comments

@@ -1,4 +1,4 @@
-if (theme && theme.widgets.contact)
+if (theme && theme.widgets && theme.widgets.contact)
   ul.contact
     each kcontact, vcontact in theme.widgets.contact
       li.contact__item
@@ -7,5 +7,6 @@ if (theme && theme.widgets.contact)
           - var contact_href = "mailto:" + kcontact;
         else
           - var contact_href = kcontact;
-        a.tag(href=contact_href)
-          !=inline_svg(contact_src)
+        a.tally(href=contact_href)
+          +inlineSvg(contact_src)
+          span= vcontact

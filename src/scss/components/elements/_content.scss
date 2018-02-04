@@ -1,0 +1,148 @@
+body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  padding: rem(10px);
+  max-width: calc(100% - #{rem(20px)});
+
+  @include mq($from: desktop) {
+    width: $wrapper;
+    padding: rem(10px) 0;
+  }
+}
+
+// * + h1,
+// * + h2,
+// * + h3,
+// * + h4,
+// * + h5,
+// * + h6 {
+//   margin-top: ms(-1);
+// }
+
+// a:not([class]) {
+//   padding: 1px;
+//   color: $color2;
+//   border-radius: 2px;
+//   transition: background-color .18s ease-in-out, color .18s ease-in-out;
+
+//   &:hover,
+//   &:focus,
+//   &:active {
+//     background-color: lighten($color1, 25%);
+//     color: $white;
+//   }
+
+//   &#more {
+//     display: none;
+//   }
+
+//   @include mq($until: mobile) {
+//     word-break: break-all;
+//   }
+// }
+
+// hr {
+//   border: 0;
+//   height: 0;
+//   margin-bottom: 24px;
+// }
+
+// blockquote {
+//   font-size: ms(0);
+//   margin-top: ms(2);
+//   margin-bottom: ms(2);
+//   font-weight: 500;
+//   font-style: italic;
+//   padding-top: 6px;
+//   padding-bottom: 6px;
+//   color: lighten($black, 25%);
+
+//   p {
+//     margin: 0;
+//   }
+// }
+
+// ul:not([class]),
+// ol:not([class]) {
+//   margin-left: 24px;
+// }
+
+// code,
+// figure {
+//   background-image: radial-gradient(
+//     circle at center right,
+//     transparentize($color1, .84),
+//     transparentize($color2, .9)
+//   );
+// }
+
+// code {
+//   padding: 2px 4px;
+//   white-space: pre-wrap;
+// }
+
+// pre code,
+// figure {
+//   display: block;
+//   padding: 12px 15px;
+// }
+
+// table {
+//   width: 100%;
+//   border-collapse: collapse;
+// }
+
+// th,
+// td {
+//   border: 1px solid lighten($color1, 15%);
+//   padding: 3px;
+// }
+
+// th {
+//   color: $color2;
+// }
+
+// figure {
+//   width: 100%;
+//   overflow: auto;
+
+//   table {
+//     margin-bottom: 0;
+//     max-width: 100%;
+//     width: auto;
+//   }
+
+//   th,
+//   td {
+//     border: 0;
+//     padding: 0 6px;
+//   }
+// }
+
+// a[href*=".gif"],
+// a[href*=".png"],
+// a[href*=".jpg"],
+// a[href*=".jpeg"] {
+//   display: block;
+//   text-align: center;
+//   padding: 0;
+
+//   &:hover,
+//   &:focus,
+//   &:active {
+//     background-color: inherit;
+//   }
+// }
+
+// img {
+//   display: block;
+//   max-width: 100%;
+//   margin-left: auto;
+//   margin-right: auto;
+// }

@@ -3,5 +3,5 @@ head
   include head/og
   include assets/favicon
   include assets/critical
-  - if(page && page.canonical)
+  if(page && page.canonical)
     link(rel="canonical", href=page.canonical)

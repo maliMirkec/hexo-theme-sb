@@ -1,0 +1,46 @@
+// // html {
+// //   font-display: swap;
+// //   font-family: 'Exo 2', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+// //     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+// //     sans-serif;
+// // }
+
+// // * {
+// //   font-weight: 300;
+// // }
+
+// // strong,
+// // strong *,
+// // b,
+// // b * {
+// //   font-weight: 500;
+// // }
+
+// // pre,
+// // pre *,
+// // code,
+// // code * {
+// //   font-family: 'Roboto Mono', monospace;
+// //   font-weight: 400;
+// // }
+
+// // body {
+// //   @include css-locks(font-size, $mq-mobile, $mq-desktop, 13px, 16px, "true");
+// //   color: $black;
+// //   min-height: 100vh;
+// //   overflow-x: hidden;
+// //   display: flex;
+// //   flex-wrap: wrap;
+// //   flex-direction: column;
+
+// //   @supports (display: grid) {
+// //     display: grid;
+// //     grid-template-columns: 1fr;
+// //     grid-template-rows: auto auto 1fr auto auto;
+// //   }
+// // }
+
+// // .main {
+// //   @include css-locks(padding-top padding-bottom, $mq-mobile, $mq-desktop, 6px, 30px, "true");
+// //   flex: 1 1 auto;
+// // }

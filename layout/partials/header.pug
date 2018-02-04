@@ -1,12 +1,23 @@
-if (theme && theme.menu)
+if (theme && theme.menu && theme.menu.items)
+  header.header
+    nav.nav
+      input.nav__checkbox(type="checkbox", id="NavToggle")
+      label.nav__toggle(for="NavToggle") Toggle navigation
+      - var navItems = Object.keys(theme.menu.items).length;
+      - var navClass = 'nav__list';
+      - var navClass = theme.menu.centered && theme.menu.display_logo && navItems % 2 == 0 ? 'nav__list nav__list--' + navItems : 'nav__list';
+      ul(class=navClass)
+        if (theme && theme.menu.display_logo && theme.site && theme.site.logo)
+          li.nav__item
+            a.nav__link(href="/")
+              +inlineSvg(theme.site.logo)
+        each knav, vnav in theme.menu.items
+          li.nav__item
+            a.nav__link(href=url_for(knav))= vnav
+else if (theme && theme.site && theme.site.logo)
   header.header
     nav.nav
       ul.nav__list
-        if (theme && theme.site.logo)
-          li.nav__item.nav__itemitem--logo
-            a.nav__link(href="/")
-              !=inline_svg(theme.site.logo)
-        each knav, vnav in theme.menu
-          li.nav__item
-            a.nav__link(href=url_for(knav))= vnav
-
+        li.nav__item
+          a.nav__link(href="/")
+            +inlineSvg(theme.site.logo)

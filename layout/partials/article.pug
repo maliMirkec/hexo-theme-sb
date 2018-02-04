@@ -30,12 +30,12 @@
             - page.categories.each(function(cat){
               li.details__item
                 - var categoryName = cat.name.length < 30 ? cat.name : cat.name.substring(0, 29) + '...';
-                a.tally(href=url_for(cat.path))= categoryName
+                a.tally(href=urlFor(cat.path))= categoryName
             - });
           if (page && page.title)
             li.details__item
               - var pageTitle = page.title.length < 30 ? page.title : page.title.substring(0, 29) + '...';
-              a.tally(href=url_for(page.path))= pageTitle
+              a.tally(href=urlFor(page.path))= pageTitle
   if (page && page.content)
     .content!= page.content
   if (page && page.photos)
@@ -49,7 +49,7 @@
         ul.details__list
           - page.tags.each(function(tag){
             li.details__item
-              a.tally(href=url_for(tag.path))= tag.name
+              a.tally(href=urlFor(tag.path))= tag.name
           - });
       if (theme && theme.widgets && theme.widgets.sharing)
         .social
@@ -66,10 +66,10 @@
         if (page && page.prev)
           li.pagination__item
             - var prevTitle = page.prev.title ? page.prev.title: "Previous";
-            a.pagination__link.pagination__link--prev(href=url_for(page.prev.path))= prevTitle
+            a.pagination__link.pagination__link--prev(href=urlFor(page.prev.path))= prevTitle
         if (page && page.next)
           li.pagination__item
             - var nextTitle = page.next.title ? page.next.title: "Next";
-            a.pagination__link.pagination__link--next(href=url_for(page.next.path))= nextTitle
+            a.pagination__link.pagination__link--next(href=urlFor(page.next.path))= nextTitle
   if (page && page.layout == "post" && theme && theme.widgets && theme.widgets.disqus)
     include widgets/comments

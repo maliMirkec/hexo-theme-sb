@@ -5,5 +5,4 @@ mixin inlineSvg(file)
   else
     img(src=file, alt="Inline image")
 
-if (!url_for)
-  - var url_for = link => link
+- var urlFor = (link) => (url_for) ? url_for(link) : link

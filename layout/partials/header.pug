@@ -13,7 +13,7 @@ if (theme && theme.menu && theme.menu.items)
               +inlineSvg(theme.site.logo)
         each knav, vnav in theme.menu.items
           li.nav__item
-            a.nav__link(href=url_for(knav))= vnav
+            a.nav__link(href=urlFor(knav))= vnav
 else if (theme && theme.site && theme.site.logo)
   header.header
     nav.nav

@@ -11,6 +11,6 @@ if (theme && theme.home_page)
           ul
             each lhref, ltext in section.links
               li
-                a(href=url_for(lhref))= ltext
+                a(href=urlFor(lhref))= ltext
 else
   include article-list

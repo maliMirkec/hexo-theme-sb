@@ -1,0 +1,16 @@
+meta(charset="UTF-8")
+meta(name="viewport" content="width=device-width, initial-scale=1.0")
+meta(http-equiv="X-UA-Compatible" content="ie=edge")
+if (theme && theme.site && theme.site.author)
+  meta(name="author" content=theme.site.author)
+else if (config && config.author)
+  meta(name="author" content=config.author)
+if (theme && theme.site && theme.site.description)
+  meta(name="description" content=theme.site.description)
+else if (config && config.description)
+  meta(name="description" content=config.description)
+if (theme && theme.site && theme.site.full_name)
+  - var title = page && page.title ? page.title + " | " + theme.site.full_name : theme.site.full_name
+  title= title
+else if (config && config.title)
+  title= config.title

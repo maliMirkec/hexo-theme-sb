@@ -1,0 +1,10 @@
+if(theme && theme.widgets && theme.widgets.google_analytics && theme.widgets.google_analytics.tracking_id)
+  - var gaLink = "https://www.googletagmanager.com/gtag/js?id=" + theme.widgets.google_analytics.tracking_id;
+  script(src=gaLink, async)
+
+  script.
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', #(theme.widget.google_analytics.tracking_id));

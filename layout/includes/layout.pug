@@ -1,0 +1,19 @@
+include ../mixins/global
+
+doctype html
+
+if (theme && theme.site && theme.site.language)
+  - var lang = theme.site.language
+else if (config && config.language)
+  - var lang = config.language
+else
+  - var lang = "en"
+
+html(lang=lang)
+  include ../partials/head
+  body
+    include ../partials/header
+    .wrapper
+      block content
+    include ../partials/footer
+    include ../partials/starter-project

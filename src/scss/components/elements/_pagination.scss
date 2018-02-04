@@ -1,0 +1,28 @@
+.pagination {
+  margin-top: rem(40px);
+}
+
+.pagination__list {
+  @include zero-box();
+  list-style: none;
+}
+
+.pagination__list--inline {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pagination__item {
+  margin-bottom: rem(20px);
+}
+
+.pagination__link {
+  font-size: ms(2);
+  color: lighten($black, 22%);
+  @include tra;
+
+  &:hover,
+  &:focus {
+    color: $black;
+  }
+}

@@ -1,0 +1,40 @@
+if (theme && theme.open_graph)
+  meta(property="og:type" content="website")
+
+  if (title)
+    meta(property="og:title" content=title)
+
+  if (desc)
+    meta(property="og:description" content=desc)
+
+  if (theme && theme.open_graph.pretty_url)
+    meta(property="og:url" content=theme.open_graph.pretty_url)
+  else if (url)
+    meta(property="og:url" content=url)
+
+  if (theme && theme.site.full_name)
+    meta(property="og:site_name" content=theme.site.full_name)
+
+  if (page && page.thumbnail)
+    meta(property="og:image" content=page.thumbnail)
+  else if (theme && theme.open_graph.image)
+    meta(property="og:image" content=theme.open_graph.image)
+
+  if (theme && theme.open_graph.twitter)
+    meta(name="twitter:card" content="summary")
+    if (title)
+      meta(name="twitter:title" content=title)
+    if (desc)
+      meta(name="twitter:description" content=desc)
+    if (theme.open_graph.twitter.twitter_id)
+      meta(name="twitter:creator" content=theme.open_graph.twitter.twitter_id)
+
+  if (theme && theme.open_graph.fb)
+    if (theme.open_graph.fb.fb_id)
+      meta(name="fb:app_id" content=theme.open_graph.fb.fb_id)
+    if (theme.open_graph.fb.fb_admins)
+      meta(name="fb:admins" content=theme.open_graph.fb.fb_admins)
+
+  if (theme && theme.open_graph.google_plus)
+    if (theme.open_graph.google_plus.google_plus_id)
+      meta(rel="publisher" content=theme.open_graph.google_plus.google_plus_id)

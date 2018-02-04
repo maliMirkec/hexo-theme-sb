@@ -1,0 +1,16 @@
+if (theme && theme.home_page)
+  .home
+    each section in theme.home_page
+      .home__box
+        if (section.title)
+          h1= section.title
+        if (section.paragraphs)
+          each p in section.paragraphs
+            p= p
+        if (section.links)
+          ul
+            each lhref, ltext in section.links
+              li
+                a(href=url_for(lhref))= ltext
+else
+  include article-list

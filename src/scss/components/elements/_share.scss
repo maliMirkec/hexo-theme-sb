@@ -1,0 +1,32 @@
+// .contact {
+//   margin-top: 15px;
+//   color: lighten($black, 18%);
+
+//   @include mq($from: desktop) {
+//     text-align: center;
+//   }
+// }
+
+// .contact__info {
+//   p {
+//     margin-bottom: 0;
+//   }
+// }
+
+// .contact__link {
+//   margin-top: 3px;
+//   margin-bottom: 3px;
+//   padding: 3px 6px;
+//   border-radius: 2px;
+//   color: lighten($color2, 10%);
+//   text-shadow: none;
+//   text-transform: uppercase;
+//   transition: background-color .18s ease-in-out, color .18s ease-in-out;
+
+//   &:hover,
+//   &:focus,
+//   &:active {
+//     background-color: transparentize($color2, .33);
+//     color: $white;
+//   }
+// }

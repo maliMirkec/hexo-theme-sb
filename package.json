@@ -1,14 +1,37 @@
 {
-  "name": "sb",
+  "name": "hexo-theme-sb",
   "version": "1.0.2",
-  "description": "SB Hexo Theme.",
-  "main": "index",
+  "description": "Beautiful and clean theme for Hexo blog framework",
   "author": "Silvestar Bistrović <malimirkeccita@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "gulp",
+    "postinstall": "node postinstall.js"
+  },
+  "keywords": [
+    "hexo",
+    "hexo-theme",
+    "theme",
+    "cms",
+    "blog",
+    "framework",
+    "pug",
+    "svg",
+    "red",
+    "pink",
+    "starter-project",
+    "sb"
+  ],
+  "bugs": {
+    "url": "https://github.com/maliMirkec/hexo-theme-sb/issues"
+  },
+  "homepage": "https://starter-project.silvestarbistrovic.from.hr",
   "dependencies": {
     "hexo-helper-inline-svg": "^1.1.1",
     "hexo-render-pug": "^1.2.0",
     "hexo-renderer-marked": "^0.3.2",
+    "ncp": "^2.0.0",
+    "path-exists": "^3.0.0",
     "starter-project": "^1.1.49",
     "yarn": "^0.27.5"
   }

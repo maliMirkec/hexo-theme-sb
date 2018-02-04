@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-sb",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Beautiful and clean theme for Hexo blog framework",
   "author": "Silvestar Bistrović <malimirkeccita@gmail.com>",
   "license": "MIT",
@@ -29,7 +29,9 @@
   "dependencies": {
     "hexo-helper-inline-svg": "^1.1.1",
     "hexo-render-pug": "^1.2.0",
-    "hexo-renderer-marked": "^0.3.2",
+    "hexo-renderer-marked": "^0.3.2"
+  },
+  "devDependencies": {
     "ncp": "^2.0.0",
     "path-exists": "^3.0.0",
     "starter-project": "^1.1.49",

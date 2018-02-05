@@ -1,3 +1,4 @@
+# General section
 # site:
 #   full_name: SB - Silvestar's personal website
 #   short_name: SB
@@ -5,6 +6,17 @@
 #   logo: /gfx/svg/logo.svg
 #   language: en
 
+# Menu section
+# menu:
+#   centered: true
+#   display_logo: true
+#   items:
+#     Home: /
+#     Blog: /categories/articles
+#     Portfolio: /portfolio
+#     About: /about-me
+
+# Homepage section
 # home_page:
 #   - section:
 #     title: Silvestar Bistrović
@@ -31,9 +43,10 @@
 #       Twitter: //twitter.com/malimirkeccita
 #       Github: //github.com/maliMirkec
 
+# Open Graph section
 # open_graph:
 #   pretty_url: true
-#   image: /gfx/SB-big.png
+#   image: /gfx/jpg/SB-big.jpg
 #   fb:
 #     fb_id: 340933169673372
 #     fb_admins: malimirkeccita
@@ -42,15 +55,7 @@
 #   google_plus:
 #     google_plus_id: +SilvestarbistrovicFromHr
 
-# menu:
-#   centered: true
-#   display_logo: true
-#   items:
-#     Home: /
-#     Blog: /categories/articles
-#     Portfolio: /portfolio
-#     About: /about-me
-
+# Widgets
 # widgets:
 #   contact:
 #     mail: mailto:me@silvestarbistrovic.from.hr?Subject=Hello

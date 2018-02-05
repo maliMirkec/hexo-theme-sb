@@ -42,13 +42,25 @@ There is already a config file in SB theme, but it is commented.
 Here is the file with every possible option:
 
 ```yaml
+# General section
 site:
-  full_name: SB - personal website of one Silvestar
+  full_name: SB - Silvestar's personal website
   short_name: SB
   description: Silvestar is a fearless web developer eager to prove his worth
   logo: /gfx/svg/logo.svg
   language: en
 
+# Menu section
+menu:
+  centered: true
+  display_logo: true
+  items:
+    Home: /
+    Blog: /categories/articles
+    Portfolio: /portfolio
+    About: /about-me
+
+# Homepage section
 home_page:
   - section:
     title: Silvestar Bistrović
@@ -65,7 +77,7 @@ home_page:
     title: Projects
     links:
       Starter Project: //starter-project.silvestarbistrovic.from.hr
-      Hexo Theme SB: //sbtheme.silvestarbistrovic.from.hr
+      Hexo Theme SB: //theme-sb.silvestarbistrovic.from.hr
       Contiamo: //www.contiamo.com
       Irina and Matej: //irinaandmatej.com
   - section:
@@ -75,9 +87,10 @@ home_page:
       Twitter: //twitter.com/malimirkeccita
       Github: //github.com/maliMirkec
 
+# Open Graph section
 open_graph:
   pretty_url: true
-  image: /gfx/SB-big.png
+  image: /gfx/jpg/SB-big.jpg
   fb:
     fb_id: 340933169673372
     fb_admins: malimirkeccita
@@ -86,15 +99,7 @@ open_graph:
   google_plus:
     google_plus_id: +SilvestarbistrovicFromHr
 
-menu:
-  centered: true
-  display_logo: true
-  items:
-    Home: /
-    Blog: /categories/articles
-    Portfolio: /portfolio
-    About: /about-me
-
+# Widgets
 widgets:
   contact:
     mail: mailto:me@silvestarbistrovic.from.hr?Subject=Hello
@@ -106,13 +111,12 @@ widgets:
     codepen: //codepen.io/CiTA/
     lastfm: //www.last.fm/user/maliMirkec
   google_analytics:
-    tracking_id: UA-9887765-4
+    tracking_id: UA-37881833-5
   disqus:
     shortname: silvestarbistrovic
   sharing:
     twitter: malimirkeccita
     facebook: silvestarbistrovic.from.hr
-
 ```
 
 
@@ -123,7 +127,9 @@ Everything is already set up for you, but you could configure the theme by updat
 
 For example, if you want to generate new Critical CSS file, you should update `penthouse.criticalCssConfigs.url` option and set it according to your Hexo configuration.
 
-__It is important that your website is running, in this case.__
+After this, run `gulp` command inside `./themes/hexo-theme-sb/` folder.
+
+__It is important that your website is running.__
 
 ## Support
 

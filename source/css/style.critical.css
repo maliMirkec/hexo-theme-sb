@@ -120,14 +120,6 @@ h1 {
   font-family: "Playfair Display Bold Subset";
 }
 
-.fonts-stage-2 body {
-  font-family: "Vollkorn";
-}
-
-.fonts-stage-4 h1 {
-  font-family: "Playfair Display Bold";
-}
-
 .header {
   background-image: radial-gradient(circle at center bottom, rgba(224, 18, 71, 0.4), rgba(224, 18, 88, 0.6)), -webkit-gradient(linear, left top, right top, color-stop(50%, rgba(224, 18, 88, 0.5)), color-stop(50%, rgba(224, 18, 88, 0.4)));
   background-image: radial-gradient(circle at center bottom, rgba(224, 18, 71, 0.4), rgba(224, 18, 88, 0.6)), linear-gradient(to right, rgba(224, 18, 88, 0.5) 50%, rgba(224, 18, 88, 0.4) 50%);
@@ -380,6 +372,14 @@ body {
 .home a {
   color: inherit;
   word-break: break-word;
+}
+
+.home a:after {
+  content: "→";
+  display: inline-block;
+  margin-left: calc(0.55556 * 1rem);
+  -webkit-transform: rotate(-270deg) scale(0);
+  transform: rotate(-270deg) scale(0);
 }
 
 .home__box {

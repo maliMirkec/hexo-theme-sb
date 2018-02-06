@@ -1,8 +1,10 @@
-
 footer.footer
   if (theme && theme.site && theme.site.short_name)
     .copyright
       p!= "&copy; " + theme.site.short_name + " " + new Date().getFullYear()
+  else if (config && config.title)
+    .copyright
+      p!= "&copy; " + config.title + " " + new Date().getFullYear()
   if (theme && theme.widgets && theme.widgets.contact)
     include widgets/contact
 

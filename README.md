@@ -77,7 +77,7 @@ home_page:
     title: Projects
     links:
       Starter Project: //starter-project.silvestarbistrovic.from.hr
-      Hexo Theme SB: //theme-sb.silvestarbistrovic.from.hr
+      Hexo Theme SB: //sbtheme.silvestarbistrovic.from.hr
       Contiamo: //www.contiamo.com
       Irina and Matej: //irinaandmatej.com
   - section:

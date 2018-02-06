@@ -1,8 +1,8 @@
-if (theme && theme.menu && theme.menu.items)
-  header.header
-    nav.nav
-      input.nav__checkbox(type="checkbox", id="NavToggle")
-      label.nav__toggle(for="NavToggle") Toggle navigation
+header.header
+  nav.nav
+    input.nav__checkbox(type="checkbox", id="NavToggle")
+    label.nav__toggle(for="NavToggle") Toggle navigation
+    if (theme && theme.menu && theme.menu.items)
       - var navItems = Object.keys(theme.menu.items).length;
       - var navClass = 'nav__list';
       - var navClass = theme.menu.centered && theme.menu.display_logo && navItems % 2 == 0 ? 'nav__list nav__list--' + navItems : 'nav__list';
@@ -14,10 +14,9 @@ if (theme && theme.menu && theme.menu.items)
         each knav, vnav in theme.menu.items
           li.nav__item
             a.nav__link(href=urlFor(knav))= vnav
-else if (theme && theme.site && theme.site.logo)
-  header.header
-    nav.nav
+    else
       ul.nav__list
         li.nav__item
-          a.nav__link(href="/")
-            +inlineSvg(theme.site.logo)
+          a.nav__link(href="/") Home
+        li.nav__item
+          a.nav__link(href="/archives") Archives

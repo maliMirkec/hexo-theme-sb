@@ -32,7 +32,7 @@
 #   - section:
 #     title: Projects
 #     links:
-#       Starter Project: //starter-project.silvestarbistrovic.from.hr
+#       Starter Project: //starter.silvestarbistrovic.from.hr
 #       Hexo Theme SB: //sbtheme.silvestarbistrovic.from.hr
 #       Contiamo: //www.contiamo.com
 #       Irina and Matej: //irinaandmatej.com
@@ -46,7 +46,7 @@
 # Open Graph section
 # open_graph:
 #   pretty_url: true
-#   image: /gfx/jpg/SB-big.jpg
+#   image: /gfx/jpg/sb-big.jpg
 #   fb:
 #     fb_id: 340933169673372
 #     fb_admins: malimirkeccita
@@ -67,7 +67,7 @@
 #     codepen: //codepen.io/CiTA/
 #     lastfm: //www.last.fm/user/maliMirkec
 #   google_analytics:
-#     tracking_id: UA-37881833-5
+#     tracking_id: UA-12345678-9
 #   disqus:
 #     shortname: silvestarbistrovic
 #   sharing:

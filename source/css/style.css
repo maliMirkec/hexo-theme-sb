@@ -866,7 +866,7 @@ body {
     left: calc(0.16667 * 1rem);
     top: calc(0.11111 * 1rem);
     height: calc(1.38889 * 1rem);
-    width: calc(1.38889 * 1rem);
+    width: calc(1.55556 * 1rem);
     fill: #fff;
     margin-right: calc(0.27778 * 1rem); }
   .tally span {
@@ -1085,6 +1085,17 @@ body {
   .home a {
     color: inherit;
     word-break: break-word; }
+    .home a:after {
+      content: "→";
+      display: inline-block;
+      margin-left: calc(0.55556 * 1rem);
+      -webkit-transform: rotate(-270deg) scale(0);
+              transform: rotate(-270deg) scale(0);
+      -webkit-transition: all 0.225s cubic-bezier(0.3, 0.6, 0.5, 0.81);
+      transition: all 0.225s cubic-bezier(0.3, 0.6, 0.5, 0.81); }
+    .home a:hover:after, .home a:focus:after {
+      -webkit-transform: rotate(0deg) scale(1);
+              transform: rotate(0deg) scale(1); }
 
 .home__box {
   -webkit-box-flex: 1;

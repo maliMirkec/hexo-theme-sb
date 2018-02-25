@@ -7,12 +7,12 @@ body {
 .wrapper {
   margin-left: auto;
   margin-right: auto;
-  padding: rem(10px);
   max-width: calc(100% - #{rem(20px)});
+  padding: rem(10px);
 
   @include mq($from: desktop) {
-    width: $wrapper;
     padding: rem(10px) 0;
+    width: $wrapper;
   }
 }
 
@@ -34,8 +34,8 @@ body {
 //   &:hover,
 //   &:focus,
 //   &:active {
-//     background-color: lighten($color1, 25%);
-//     color: $white;
+//     background-color: lighten($color-alpha, 25%);
+//     color: $color-beta;
 //   }
 
 //   &#more {
@@ -61,7 +61,7 @@ body {
 //   font-style: italic;
 //   padding-top: 6px;
 //   padding-bottom: 6px;
-//   color: lighten($black, 25%);
+//   color: lighten($color-gamma, 25%);
 
 //   p {
 //     margin: 0;
@@ -77,7 +77,7 @@ body {
 // figure {
 //   background-image: radial-gradient(
 //     circle at center right,
-//     transparentize($color1, .84),
+//     transparentize($color-alpha, .84),
 //     transparentize($color2, .9)
 //   );
 // }
@@ -100,7 +100,7 @@ body {
 
 // th,
 // td {
-//   border: 1px solid lighten($color1, 15%);
+//   border: 1px solid lighten($color-alpha, 15%);
 //   padding: 3px;
 // }
 

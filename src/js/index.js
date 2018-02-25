@@ -1,1 +1,1 @@
-console.log('Powered by Starter Project (https://github.com/maliMirkec/starter-project).')
+console.log('Powered by Starter Project (https://starter.silvestarbistrovic.from.hr).')

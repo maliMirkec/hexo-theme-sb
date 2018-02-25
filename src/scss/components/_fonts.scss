@@ -1,6 +1,6 @@
 body {
+  color: $color-gamma;
   font-family: serif;
-  color: $black;
   font-style: normal;
   font-weight: 400;
 }
@@ -11,40 +11,40 @@ h3,
 h4,
 h5,
 h6 {
+  @include ls(50);
   font-style: normal;
   font-weight: bold;
   text-transform: uppercase;
-  @include ls(50);
 }
 
 .fonts-stage-1 body {
-  font-family: $font-family1-subset;
+  font-family: $font-alpha-subset;
   font-style: normal;
   font-weight: 400;
 }
 
-.fonts-stage-3 h1,
-.fonts-stage-3 h2,
-.fonts-stage-3 h3,
-.fonts-stage-3 h4,
-.fonts-stage-3 h5,
-.fonts-stage-3 h6 {
-  font-family: $font-family2-subset;
+.fonts-stage-1 h1,
+.fonts-stage-1 h2,
+.fonts-stage-1 h3,
+.fonts-stage-1 h4,
+.fonts-stage-1 h5,
+.fonts-stage-1 h6 {
+  font-family: $font-beta-subset;
 }
 
 .fonts-stage-2 body {
-  font-family: $font-family1;
+  font-family: $font-alpha;
 }
 
-.fonts-stage-4 h1,
-.fonts-stage-4 h2,
-.fonts-stage-4 h3,
-.fonts-stage-4 h4,
-.fonts-stage-4 h5,
-.fonts-stage-4 h6 {
-  font-family: $font-family2;
+.fonts-stage-2 h1,
+.fonts-stage-2 h2,
+.fonts-stage-2 h3,
+.fonts-stage-2 h4,
+.fonts-stage-2 h5,
+.fonts-stage-2 h6 {
+  font-family: $font-beta;
 }
 
 code {
-  font-family: $font-family-code;
+  font-family: $font-gamma;
 }

@@ -1,27 +1,19 @@
 .home {
-  color: $white;
-
+  color: $color-beta;
   display: flex;
   flex-direction: column;
   margin-top: rem(20px);
-
-  @supports (display: grid) {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(auto, 1fr));
-    grid-template-rows: repeat(4, 1fr);
-    grid-row-gap: rem(30px);
-  }
 
   a {
     color: inherit;
     word-break: break-word;
 
     &:after {
-      content: "→";
+      @include tra;
+      content: '→';
       display: inline-block;
       margin-left: rem(10px);
       transform: rotate(-270deg) scale(0);
-      @include tra;
     }
 
     &:hover,
@@ -31,11 +23,18 @@
       }
     }
   }
+
+  @supports (display: grid) {
+    display: grid;
+    grid-row-gap: rem(30px);
+    grid-template-columns: repeat(3, minmax(auto, 1fr));
+    grid-template-rows: repeat(4, 1fr);
+  }
 }
 
 .home__box {
-  flex: 1 1 auto;
   display: flex;
+  flex: 1 1 auto;
   flex-direction: column;
   justify-content: flex-end;
   padding: rem(40px) rem(20px) rem(20px);
@@ -43,14 +42,6 @@
 
   &:not(:last-of-type) {
     margin-bottom: rem(30px);
-  }
-
-  @supports (display: grid) {
-    min-height: unset;
-
-    &:not(:last-of-type) {
-      margin-bottom: unset;
-    }
   }
 
   &:nth-of-type(odd) {
@@ -62,18 +53,10 @@
   }
 
   &:nth-of-type(even) {
-    background-image: bg-v($black);
+    background-image: bg-v($color-gamma);
 
     @supports (display: grid) {
       grid-column: 2 / span 2;
-    }
-  }
-
-  @supports (display: grid) {
-    @for $i from 1 through 6 {
-      &:nth-of-type(#{$i}) {
-        grid-row: #{$i};
-      }
     }
   }
 
@@ -83,12 +66,28 @@
   }
 
   p {
-    margin-top: 0;
-    margin-bottom: 0;
     @include ls(50);
+    margin-bottom: 0;
+    margin-top: 0;
   }
 
   ul {
     margin: 0;
+  }
+
+  @supports (display: grid) {
+    min-height: unset;
+
+    &:not(:last-of-type) {
+      margin-bottom: unset;
+    }
+  }
+
+  @supports (display: grid) {
+    @for $i from 1 through 6 {
+      &:nth-of-type(#{$i}) {
+        grid-row: #{$i};
+      }
+    }
   }
 }

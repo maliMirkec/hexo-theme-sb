@@ -113,6 +113,6 @@ code {
 }
 
 ::selection {
-  background-color: lighten($color1, 44%);
+  background-color: lighten($color-alpha, 44%);
 }
 

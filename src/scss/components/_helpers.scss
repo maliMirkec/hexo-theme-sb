@@ -20,15 +20,15 @@
 }
 
 @mixin zero-box() {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
-@mixin bsh($color: $color1) {
+@mixin bsh($color: $color-alpha) {
   box-shadow: 0 1px 4px -1px $color;
 }
 
-@mixin tsh($color: $color1) {
+@mixin tsh($color: $color-alpha) {
   text-shadow: 0 1px 1px $color;
 }
 
@@ -44,26 +44,10 @@
   transition: all $transition-duration $transition-animation;
 }
 
-@function bg-v($main-color: $color1) {
-  @return radial-gradient(
-    circle at center bottom,
-    transparentize(adjust-hue($main-color, 5deg), .6),
-    transparentize($main-color, .4)
-  ), linear-gradient(
-    to right,
-    transparentize($main-color, .5) 50%,
-    transparentize($main-color, .6) 50%
-  );
+@function bg-v($main-color: $color-alpha) {
+  @return radial-gradient( circle at center bottom, transparentize(adjust-hue($main-color, 5deg), .6), transparentize($main-color, .4) ), linear-gradient( to right, transparentize($main-color, .5) 50%, transparentize($main-color, .6) 50% );
 }
 
-@function bg-h($main-color: $color1) {
-  @return radial-gradient(
-    circle at center bottom,
-    transparentize(adjust-hue($main-color, 5deg), .4),
-    transparentize($main-color, .6)
-  ), linear-gradient(
-    to bottom,
-    transparentize($main-color, .6) 48%,
-    transparentize($main-color, .3) 48%
-  );
+@function bg-h($main-color: $color-alpha) {
+  @return radial-gradient( circle at center bottom, transparentize(adjust-hue($main-color, 5deg), .4), transparentize($main-color, .6) ), linear-gradient( to bottom, transparentize($main-color, .6) 48%, transparentize($main-color, .3) 48% );
 }

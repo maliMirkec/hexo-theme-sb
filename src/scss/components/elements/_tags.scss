@@ -1,23 +1,56 @@
 .tally {
-  font-family: $font-family1;
-  display: inline-flex;
-  align-items: center;
-  background-image: bg-h();
-  color: $white;
-  font-size: ms(-4);
-  padding: rem(5px) rem(15px) rem(2px);
-  margin-top: rem(5px);
-  margin-bottom: rem(5px);
-  border-radius: rem(4px);
-  text-decoration: none;
   @include ls(50);
-  @include bsh(transparentize($black, .4));
+  @include bsh(transparentize($color-gamma, .4));
   @include tsh;
   @include tra;
+  align-items: center;
+  background-image: bg-h();
+  border-radius: rem(4px);
+  color: $color-beta;
+  display: inline-flex;
+  font-family: $font-alpha;
+  font-size: ms(-4);
+  margin-bottom: rem(5px);
+  margin-top: rem(5px);
+  padding: rem(5px) rem(15px) rem(2px);
   position: relative;
+  text-decoration: none;
 
   & + & {
     margin-left: rem(10px);
+  }
+
+  &[type="submit"],
+  &[type="button"],
+  &[href] {
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: transparentize($color-gamma, 0.75);
+      color: $color-beta;
+    }
+
+    &:active {
+      @include bsh(transparentize($color-gamma, 1));
+    }
+  }
+
+  svg {
+    fill: $color-beta;
+    height: rem(25px);
+    left: rem(3px);
+    margin-right: rem(5px);
+    position: absolute;
+    top: rem(2px);
+    width: rem(28px);
+  }
+
+  span {
+    text-transform: capitalize;
+  }
+
+  svg + span {
+    margin-left: rem(18px);
   }
 
   @each $social-name, $social-color in $social-icons {
@@ -32,44 +65,11 @@
       }
     }
   }
-
-  &[type="submit"],
-  &[type="button"],
-  &[href] {
-    &:hover,
-    &:focus,
-    &:active {
-      color: $white;
-      background-color: transparentize($black, .75);
-    }
-
-    &:active {
-      @include bsh(transparentize($black, 1));
-    }
-  }
-
-  svg {
-    position: absolute;
-    left: rem(3px);
-    top: rem(2px);
-    height: rem(25px);
-    width: rem(28px);
-    fill: $white;
-    margin-right: rem(5px);
-  }
-
-  span {
-    text-transform: capitalize;
-  }
-
-  svg + span {
-    margin-left: rem(18px);
-  }
 }
 
 .tally--hash {
   &::before {
-    content: "#";
+    content: '#';
     margin-right: rem(3px);
   }
 }

@@ -17,12 +17,12 @@
 }
 
 .pagination__link {
-  font-size: ms(2);
-  color: lighten($black, 22%);
   @include tra;
+  color: lighten($color-gamma, 22%);
+  font-size: ms(2);
 
   &:hover,
   &:focus {
-    color: $black;
+    color: $color-gamma;
   }
 }

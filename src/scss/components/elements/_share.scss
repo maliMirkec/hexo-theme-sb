@@ -1,6 +1,6 @@
 // .contact {
 //   margin-top: 15px;
-//   color: lighten($black, 18%);
+//   color: lighten($color-gamma, 18%);
 
 //   @include mq($from: desktop) {
 //     text-align: center;
@@ -27,6 +27,6 @@
 //   &:focus,
 //   &:active {
 //     background-color: transparentize($color2, .33);
-//     color: $white;
+//     color: $color-beta;
 //   }
 // }

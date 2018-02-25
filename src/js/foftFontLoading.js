@@ -39,6 +39,11 @@ let FontFaceObserver;
     style: 'normal'
   })
 
+  const fontBSubset = new FontFaceObserver('Playfair Display Bold Subset', {
+    weight: 700,
+    style: 'normal'
+  })
+
   /**
    * A promise that adds 'fonts-stage-1' if {@link fontASubset}
    * is loaded successfully.
@@ -46,7 +51,7 @@ let FontFaceObserver;
    * @method
    * @name Promise
    */
-  Promise.all([fontASubset.load()]).then(() => {
+  Promise.all([fontASubset.load(), fontBSubset.load()]).then(() => {
     document.documentElement.className += ' fonts-stage-1'
 
     /**
@@ -61,73 +66,12 @@ let FontFaceObserver;
       style: 'normal'
     })
 
-    console.log(`Subset font1 loaded.`)
-
-    /**
-     * A promise that adds 'fonts-stage-2' if
-     * {@link fontA}
-     * are loaded successfully.
-     * Also, set Critical FOFT session variable to true.
-     *
-     * @method
-     * @name Promise
-     */
-    Promise.all([fontA.load()]).then(() => {
-      document.documentElement.className += ' fonts-stage-2'
-
-      // Optimization for Repeat Views
-      window.sessionStorage.criticalFoftDataUriFontsLoaded1 = true
-
-      console.log(`Main font1 loaded.`)
-    }, () => {
-      console.log(`Main font1 not loaded.`)
-    })
-  }, () => {
-    console.log(`Subset font1 not loaded.`)
-  })
-})();
-
-(() => {
-  if (window.sessionStorage.criticalFoftDataUriFontsLoaded2) {
-    document.documentElement.className += ' fonts-stage-3 fonts-stage-4'
-    return
-  }
-
-  /**
-   * A subset of default font type.
-   *
-   * @const
-   * @name fontASubset
-   * @type {Object}
-   */
-  const fontBSubset = new FontFaceObserver('Playfair Display Bold Subset', {
-    weight: 700,
-    style: 'normal'
-  })
-
-  /**
-   * A promise that adds 'fonts-stage-1' if {@link fontASubset}
-   * is loaded successfully.
-   *
-   * @method
-   * @name Promise
-   */
-  Promise.all([fontBSubset.load()]).then(() => {
-    document.documentElement.className += ' fonts-stage-3'
-
-    /**
-     * Default font type.
-     *
-     * @const
-     * @name fontA
-     * @type {Object}
-     */
     const fontB = new FontFaceObserver('Playfair Display Bold', {
       weight: 700,
       style: 'normal'
     })
 
-    console.log(`Subset font2 loaded.`)
+    console.log(`Subset fonts loaded.`)
 
     /**
      * A promise that adds 'fonts-stage-2' if
@@ -138,17 +82,17 @@ let FontFaceObserver;
      * @method
      * @name Promise
      */
-    Promise.all([fontB.load()]).then(() => {
-      document.documentElement.className += ' fonts-stage-4'
+    Promise.all([fontA.load(), fontB.load()]).then(() => {
+      document.documentElement.className += ' fonts-stage-2'
 
       // Optimization for Repeat Views
-      window.sessionStorage.criticalFoftDataUriFontsLoaded2 = true
+      window.sessionStorage.criticalFoftDataUriFontsLoaded1 = true
 
-      console.log(`Main font2 loaded.`)
+      console.log(`Main fonts loaded.`)
     }, () => {
-      console.log(`Main font2 not loaded.`)
+      console.log(`Main fonts not loaded.`)
     })
   }, () => {
-    console.log(`Subset font2 not loaded.`)
+    console.log(`Subset fonts not loaded.`)
   })
 })()

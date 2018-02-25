@@ -12,7 +12,7 @@
 //   overflow: hidden;
 //   background-image: linear-gradient(
 //     to bottom right,
-//     transparentize($color1, .15),
+//     transparentize($color-alpha, .15),
 //     transparentize($color2, .15)
 //   );
 //   transform-origin: top center;
@@ -26,7 +26,7 @@
 //     left: 0;
 //     right: 0;
 //     height: 100vh;
-//     background-color: $white;
+//     background-color: $color-beta;
 //     transform-origin: bottom left;
 //     transform: skew(0, -5deg);
 //   }
@@ -40,18 +40,18 @@
 
 // .index__title {
 //   text-transform: uppercase;
-//   color: transparentize($white, .6);
+//   color: transparentize($color-beta, .6);
 //   font-size: ms(2);
 // }
 
 // .index__link {
 //   font-size: ms(5);
-//   color: transparentize($white, .3);
+//   color: transparentize($color-beta, .3);
 //   transition: color .15s ease-in-out;
 
 //   &:hover,
 //   &:focus,
 //   &:active {
-//     color: $white;
+//     color: $color-beta;
 //   }
 // }

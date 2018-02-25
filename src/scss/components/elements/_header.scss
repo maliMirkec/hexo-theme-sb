@@ -7,62 +7,58 @@
 }
 
 .nav__checkbox {
-  position: absolute;
   left: -9999px;
+  position: absolute;
 }
 
 .nav__toggle {
-  display: block;
-  position: absolute;
-  top: rem(35px);
-  right: rem(20px);
-  height: rem(30px);
-  width: rem(30px);
-  border-radius: rem(5px);
-  background-image: linear-gradient(to bottom, $color1 20%, transparent 20%, transparent 40%, $color1 40%, $color1 60%, transparent 60%, transparent 80%, $color1 80%);
-  text-indent: -9999px;
-  cursor: pointer;
-  z-index: 1;
   @include tra;
-
-  .nav__checkbox:checked + & {
-    background-image: linear-gradient(45deg, transparent 40%, $color1 40%, $color1 60%, transparent 60%), linear-gradient(-45deg, transparent 40%, $color1 40%, $color1 60%, transparent 60%);
-  }
+  background-image: linear-gradient(to bottom, $color-alpha 20%, transparent 20%, transparent 40%, $color-alpha 40%, $color-alpha 60%, transparent 60%, transparent 80%, $color-alpha 80%);
+  border-radius: rem(5px);
+  cursor: pointer;
+  display: block;
+  height: rem(30px);
+  position: absolute;
+  right: rem(20px);
+  text-indent: -9999px;
+  top: rem(35px);
+  width: rem(30px);
+  z-index: 1;
 
   @include mq($from: desktop) {
     display: none;
   }
+
+  .nav__checkbox:checked + & {
+    background-image: linear-gradient(45deg, transparent 40%, $color-alpha 40%, $color-alpha 60%, transparent 60%), linear-gradient(-45deg, transparent 40%, $color-alpha 40%, $color-alpha 60%, transparent 60%);
+  }
 }
 
 .nav__list {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  list-style: none;
-  justify-content: center;
-  align-items: center;
   @include zero-box;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
 
   @include mq($from: desktop) {
-    flex-direction: row;
     align-items: stretch;
+    flex-direction: row;
   }
 }
 
 .nav__item {
+  @include tra;
+  align-items: stretch;
   display: flex;
   flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
-  width: 120px;
   font-size: ms(-4);
-  @include tra;
-
-  &:hover {
-    background-color: transparentize($white, .85);
-  }
 
   @include mq($until: desktop) {
+    width: 100%;
+
     &:not(:nth-child(1)) {
       display: none;
 
@@ -72,8 +68,15 @@
     }
   }
 
+  &:hover {
+    background-color: transparentize($color-beta, 0.85);
+  }
+
   .nav__list--2 & {
     @include mq($from: desktop) {
+      max-width: calc(100% / 3);
+      min-width: rem(120px);
+
       &:nth-child(-n + 2) {
         order: 0;
       }
@@ -86,6 +89,9 @@
 
   .nav__list--4 & {
     @include mq($from: desktop) {
+      max-width: rem(120px);
+      width: calc(100% / 5);
+
       &:nth-child(-n + 3) {
         order: 0;
       }
@@ -97,10 +103,12 @@
   }
 
   .nav__list--6 & {
-    width: 96px;
     font-size: ms(-6);
 
     @include mq($from: desktop) {
+      max-width: rem(100px);
+      width: calc(100% / 7);
+
       &:nth-child(-n + 4) {
         order: 0;
       }
@@ -112,10 +120,12 @@
   }
 
   .nav__list--8 & {
-    width: 73px;
     font-size: ms(-8);
 
     @include mq($from: desktop) {
+      max-width: rem(100px);
+      width: calc(100% / 9);
+
       &:nth-child(-n + 5) {
         order: 0;
       }
@@ -128,26 +138,35 @@
 
   [class*="nav__list--"] & {
     &:nth-child(1) {
-      order: 1;
+      min-height: rem(100px);
+
+      @include mq($from: desktop) {
+        order: 1;
+      }
     }
   }
 }
 
 .nav__link {
-  padding: rem(15px) 0;
-  position: relative;
-  color: $white;
-  text-decoration: none;
-  text-transform: uppercase;
   @include tsh;
   @include ls(100);
+  align-items: center;
+  color: $color-beta;
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  padding: rem(15px) rem(5px);
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
 
   svg {
+    background-color: $color-beta;
+    border: rem(10px) solid $color-beta;
+    border-radius: rem(35px);
     display: block;
     height: rem(50px);
     width: rem(50px);
-    border-radius: rem(35px);
-    background-color: $white;
-    border: rem(10px) solid $white;
   }
 }

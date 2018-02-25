@@ -1,7 +1,7 @@
 .footer {
+  background-image: bg-h(lighten($color-alpha, 40%));
+  color: $color-alpha;
   font-family: sans-serif;
-  background-image: bg-h(lighten($color1, 40%));
-  color: $color1;
   font-size: ms(-5);
   margin-top: rem(20px);
   text-align: center;
@@ -19,7 +19,7 @@
 //   padding: 6px;
 //   background-image: radial-gradient(
 //     circle at center bottom,
-//     transparentize($color1, .25),
+//     transparentize($color-alpha, .25),
 //     transparentize($color2, .25)
 //   );
 // }
@@ -29,7 +29,7 @@
 //   margin-left: auto;
 //   margin-right: auto;
 //   border-radius: 50%;
-//   background-color: $white;
+//   background-color: $color-beta;
 //   padding: 6px;
 //   margin-bottom: 6px;
 //   position: relative;
@@ -44,5 +44,5 @@
 //   font-size: ms(-3);
 //   padding: 3px;
 //   text-align: center;
-//   color: $white;
+//   color: $color-beta;
 // }

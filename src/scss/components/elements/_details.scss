@@ -1,44 +1,38 @@
 .details {
+  background-color: $color-beta;
+  border-bottom: 1px solid lighten($color-alpha, 40%);
+  border-top: 1px solid lighten($color-alpha, 40%);
   font-size: ms(-2);
-  border-top: 1px solid lighten($color1, 40%);
-  border-bottom: 1px solid lighten($color1, 40%);
-  background-color: $white;
   margin-top: rem(7px);
 
   @include mq($from: desktop) {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
     align-items: baseline;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
 }
 
 .details__list {
   @include zero-box;
+  align-items: stretch;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
   list-style: none;
+
+  @include mq($from: desktop) {
+    align-items: baseline;
+    flex-direction: row;
+  }
 
   &:not(:empty) {
     padding: rem(5px) 0;
-  }
-
-  @include mq($from: desktop) {
-    flex-direction: row;
-    align-items: baseline;
   }
 }
 
 .details__item {
   flex: 1 1 auto;
-
-  .text,
-  .tally {
-    display: block;
-    text-align: center;
-  }
 
   @include mq($from: desktop) {
     flex: 0 1 auto;
@@ -46,5 +40,11 @@
     & + & {
       margin-left: rem(10px);
     }
+  }
+
+  .text,
+  .tally {
+    display: block;
+    text-align: center;
   }
 }

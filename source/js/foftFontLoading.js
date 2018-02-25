@@ -225,6 +225,11 @@ var FontFaceObserver = void 0;
     style: 'normal'
   });
 
+  var fontBSubset = new FontFaceObserver('Playfair Display Bold Subset', {
+    weight: 700,
+    style: 'normal'
+  });
+
   /**
    * A promise that adds 'fonts-stage-1' if {@link fontASubset}
    * is loaded successfully.
@@ -232,7 +237,7 @@ var FontFaceObserver = void 0;
    * @method
    * @name Promise
    */
-  Promise.all([fontASubset.load()]).then(function () {
+  Promise.all([fontASubset.load(), fontBSubset.load()]).then(function () {
     document.documentElement.className += ' fonts-stage-1';
 
     /**
@@ -247,73 +252,12 @@ var FontFaceObserver = void 0;
       style: 'normal'
     });
 
-    console.log("Subset font1 loaded.");
-
-    /**
-     * A promise that adds 'fonts-stage-2' if
-     * {@link fontA}
-     * are loaded successfully.
-     * Also, set Critical FOFT session variable to true.
-     *
-     * @method
-     * @name Promise
-     */
-    Promise.all([fontA.load()]).then(function () {
-      document.documentElement.className += ' fonts-stage-2';
-
-      // Optimization for Repeat Views
-      window.sessionStorage.criticalFoftDataUriFontsLoaded1 = true;
-
-      console.log("Main font1 loaded.");
-    }, function () {
-      console.log("Main font1 not loaded.");
-    });
-  }, function () {
-    console.log("Subset font1 not loaded.");
-  });
-})();
-
-(function () {
-  if (window.sessionStorage.criticalFoftDataUriFontsLoaded2) {
-    document.documentElement.className += ' fonts-stage-3 fonts-stage-4';
-    return;
-  }
-
-  /**
-   * A subset of default font type.
-   *
-   * @const
-   * @name fontASubset
-   * @type {Object}
-   */
-  var fontBSubset = new FontFaceObserver('Playfair Display Bold Subset', {
-    weight: 700,
-    style: 'normal'
-  });
-
-  /**
-   * A promise that adds 'fonts-stage-1' if {@link fontASubset}
-   * is loaded successfully.
-   *
-   * @method
-   * @name Promise
-   */
-  Promise.all([fontBSubset.load()]).then(function () {
-    document.documentElement.className += ' fonts-stage-3';
-
-    /**
-     * Default font type.
-     *
-     * @const
-     * @name fontA
-     * @type {Object}
-     */
     var fontB = new FontFaceObserver('Playfair Display Bold', {
       weight: 700,
       style: 'normal'
     });
 
-    console.log("Subset font2 loaded.");
+    console.log("Subset fonts loaded.");
 
     /**
      * A promise that adds 'fonts-stage-2' if
@@ -324,17 +268,17 @@ var FontFaceObserver = void 0;
      * @method
      * @name Promise
      */
-    Promise.all([fontB.load()]).then(function () {
-      document.documentElement.className += ' fonts-stage-4';
+    Promise.all([fontA.load(), fontB.load()]).then(function () {
+      document.documentElement.className += ' fonts-stage-2';
 
       // Optimization for Repeat Views
-      window.sessionStorage.criticalFoftDataUriFontsLoaded2 = true;
+      window.sessionStorage.criticalFoftDataUriFontsLoaded1 = true;
 
-      console.log("Main font2 loaded.");
+      console.log("Main fonts loaded.");
     }, function () {
-      console.log("Main font2 not loaded.");
+      console.log("Main fonts not loaded.");
     });
   }, function () {
-    console.log("Subset font2 not loaded.");
+    console.log("Subset fonts not loaded.");
   });
 })();

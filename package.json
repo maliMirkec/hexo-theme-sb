@@ -28,7 +28,7 @@
   "homepage": "https://sbtheme.silvestarbistrovic.from.hr",
   "dependencies": {
     "hexo-helper-inline-svg": "^1.1.1",
-    "hexo-render-pug": "^2.0.0",
+    "hexo-render-pug": "^2.1.0",
     "ncp": "^2.0.0",
     "yarn": "^0.27.5"
   },
